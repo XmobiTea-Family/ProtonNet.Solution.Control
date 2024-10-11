@@ -1,0 +1,6 @@
+RELEASE NOTES 
+
+1.0.4
+-----------------------------
+
+First Release

@@ -1,0 +1,897 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmobiTea.ProtonNet.Control</name>
+    </assembly>
+    <members>
+        <member name="T:XmobiTea.ProtonNet.Control.ApplicationStartup">
+            <summary>
+            The ApplicationStartup class is responsible for initializing and running the ProtonNet Control application.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.ApplicationStartup.Command">
+            <summary>
+            Gets the command that will be executed by the application.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.ApplicationStartup.Name">
+            <summary>
+            Gets the name associated with this application startup instance.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.#ctor(XmobiTea.ProtonNet.Control.ApplicationStartup.Builder)">
+            <summary>
+            Initializes a new instance of the ApplicationStartup class using the specified builder.
+            </summary>
+            <param name="builder">The builder used to configure the ApplicationStartup instance.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.Run">
+            <summary>
+            Runs the application by executing the configured command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.NewExecuteService">
+            <summary>
+            Creates a new instance of IExecuteService with appropriate handlers based on the platform.
+            </summary>
+            <returns>A configured instance of IExecuteService.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.SetupLog">
+            <summary>
+            Sets up logging for the application, configuring Log4Net if available.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.NewBuilder">
+            <summary>
+            Creates a new builder instance for configuring and creating an ApplicationStartup instance.
+            </summary>
+            <returns>A new instance of the Builder class.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.ApplicationStartup.Builder">
+            <summary>
+            The Builder class is used to configure and create an instance of ApplicationStartup.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.ApplicationStartup.Builder.Command">
+            <summary>
+            Gets or sets the command to be executed by the application.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.ApplicationStartup.Builder.Name">
+            <summary>
+            Gets or sets the name associated with the application startup instance.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.Builder.SetCommand(XmobiTea.ProtonNet.Control.Types.Command)">
+            <summary>
+            Sets the command to be executed.
+            </summary>
+            <param name="command">The command to execute.</param>
+            <returns>The current instance of the Builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.Builder.SetName(System.String)">
+            <summary>
+            Sets the name for the application startup instance.
+            </summary>
+            <param name="name">The name to associate with the instance.</param>
+            <returns>The current instance of the Builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.Builder.SetArgs(System.String[])">
+            <summary>
+            Configures the builder using command-line arguments.
+            </summary>
+            <param name="args">The command-line arguments.</param>
+            <returns>The current instance of the Builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.ApplicationStartup.Builder.Build">
+            <summary>
+            Builds and returns a configured instance of ApplicationStartup.
+            </summary>
+            <returns>A new instance of ApplicationStartup configured with the builder.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Handlers.CommandRunDelegate">
+            <summary>
+            Delegate for executing commands.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Handlers.IExecuteHandler">
+            <summary>
+            Interface for command execution handlers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.IExecuteHandler.GetPlatformOS">
+            <summary>
+            Gets the platform OS for this handler.
+            </summary>
+            <returns>The platform OS.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.IExecuteHandler.Execute(XmobiTea.ProtonNet.Control.Types.Command)">
+            <summary>
+            Executes a specific command.
+            </summary>
+            <param name="command">The command to execute.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler">
+            <summary>
+            Abstract base class for command execution handlers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler"/> class.
+            </summary>
+            <param name="name">The name of the handler.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.GetPlatformOS">
+            <summary>
+            Gets the platform OS for this handler.
+            </summary>
+            <returns>The platform OS.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.Execute(XmobiTea.ProtonNet.Control.Types.Command)">
+            <summary>
+            Executes a specific command.
+            </summary>
+            <param name="command">The command to execute.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.AddCommandExecutes">
+            <summary>
+            Adds command implementations to the dictionary.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteVersion">
+            <summary>
+            Executes the version command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteHelp">
+            <summary>
+            Executes the help command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteDebug">
+            <summary>
+            Executes the debug command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteStart">
+            <summary>
+            Executes the start command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteStop">
+            <summary>
+            Executes the stop command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteRestart">
+            <summary>
+            Executes the restart command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteInstall">
+            <summary>
+            Executes the install command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteUninstall">
+            <summary>
+            Executes the uninstall command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteStatus">
+            <summary>
+            Executes the status command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.ExecuteLog">
+            <summary>
+            Executes the log command.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.GetLogFilePaths">
+            <summary>
+            Retrieves log file paths.
+            </summary>
+            <returns>An array of log file paths.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteVersion">
+            <summary>
+            Method to handle the version command, to be overridden by derived classes.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteHelp">
+            <summary>
+            Method to handle the help command, to be overridden by derived classes.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteDebug(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Method to handle the debug command, to be overridden by derived classes.
+            </summary>
+            <param name="instance">The proton instance to debug.</param>
+            <param name="controlAgentPath">The path to the control agent.</param>
+            <param name="args">The arguments for the control agent.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteStart(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.Action{System.Boolean})">
+            <summary>
+            Method to handle the start command, to be overridden by derived classes.
+            </summary>
+            <param name="instance">The proton instance to start.</param>
+            <param name="onDone">Callback to execute after starting.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteStop(System.Action{System.Boolean})">
+            <summary>
+            Method to handle the stop command, to be overridden by derived classes.
+            </summary>
+            <param name="onDone">Callback to execute after stopping.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteInstall(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Method to handle the install command, to be overridden by derived classes.
+            </summary>
+            <param name="instance">The proton instance to install.</param>
+            <param name="controlAgentPath">The path to the control agent.</param>
+            <param name="args">The arguments for the control agent.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteUninstall">
+            <summary>
+            Method to handle the uninstall command, to be overridden by derived classes.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteStatus">
+            <summary>
+            Method to handle the status command, to be overridden by derived classes.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.AbstractExecuteHandler.OnExecuteLog(System.String[])">
+            <summary>
+            Method to handle the log command, to be overridden by derived classes.
+            </summary>
+            <param name="logFilePaths">The paths to the log files.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler">
+            <summary>
+            Handler for executing commands on Linux platform.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler"/> class.
+            </summary>
+            <param name="name">The name of the handler.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.GetPlatformOS">
+            <summary>
+            Gets the platform OS for this handler.
+            </summary>
+            <returns>The platform OS as <see cref="F:XmobiTea.ProtonNet.Control.Types.PlatformOS.Linux"/>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteVersion">
+            <summary>
+            Executes the version command (Linux-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteHelp">
+            <summary>
+            Executes the help command (Linux-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteDebug(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Executes the debug command (Linux-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to debug.</param>
+            <param name="controlAgentPath">The path to the control agent executable.</param>
+            <param name="args">Arguments for the debug command.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteStart(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.Action{System.Boolean})">
+            <summary>
+            Executes the start command (Linux-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to start.</param>
+            <param name="onDone">Callback to be invoked when the operation is done.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteStop(System.Action{System.Boolean})">
+            <summary>
+            Executes the stop command (Linux-specific implementation).
+            </summary>
+            <param name="onDone">Callback to be invoked when the operation is done.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteInstall(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Executes the install command (Linux-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to install.</param>
+            <param name="controlAgentPath">The path to the control agent executable.</param>
+            <param name="args">Arguments for the install command.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteUninstall">
+            <summary>
+            Executes the uninstall command (Linux-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteStatus">
+            <summary>
+            Executes the status command (Linux-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.OnExecuteLog(System.String[])">
+            <summary>
+            Executes the log command (Linux-specific implementation).
+            </summary>
+            <param name="logFilePaths">The paths to the log files to open.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.LinuxExecuteHandler.GetProcessId(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance)">
+            <summary>
+            Gets the process ID of the running service.
+            </summary>
+            <param name="instance">The proton instance to get the process ID for.</param>
+            <returns>The process ID if it exists; otherwise, null.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler">
+            <summary>
+            Handler for executing commands on OSX platform.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler"/> class.
+            </summary>
+            <param name="name">The name of the handler.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.GetPlatformOS">
+            <summary>
+            Gets the platform OS for this handler.
+            </summary>
+            <returns>The platform OS as <see cref="F:XmobiTea.ProtonNet.Control.Types.PlatformOS.OSX"/>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteVersion">
+            <summary>
+            Executes the version command (OSX-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteHelp">
+            <summary>
+            Executes the help command (OSX-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteDebug(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Executes the debug command (OSX-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to debug.</param>
+            <param name="controlAgentPath">The path to the control agent executable.</param>
+            <param name="args">Arguments for the debug command.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteStart(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.Action{System.Boolean})">
+            <summary>
+            Executes the start command (OSX-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to start.</param>
+            <param name="onDone">Callback to be invoked when the operation is done.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteStop(System.Action{System.Boolean})">
+            <summary>
+            Executes the stop command (OSX-specific implementation).
+            </summary>
+            <param name="onDone">Callback to be invoked when the operation is done.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteInstall(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Executes the install command (OSX-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to install.</param>
+            <param name="controlAgentPath">The path to the control agent executable.</param>
+            <param name="args">Arguments for the install command.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteUninstall">
+            <summary>
+            Executes the uninstall command (OSX-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteStatus">
+            <summary>
+            Executes the status command (OSX-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.OnExecuteLog(System.String[])">
+            <summary>
+            Executes the log command (OSX-specific implementation).
+            </summary>
+            <param name="logFilePaths">The paths to the log files to open.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.OSXExecuteHandler.GetProcessId(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance)">
+            <summary>
+            Gets the process ID of the running service.
+            </summary>
+            <param name="instance">The proton instance to get the process ID for.</param>
+            <returns>The process ID if it exists; otherwise, null.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler">
+            <summary>
+            Handler for executing commands on Windows platform.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler"/> class.
+            </summary>
+            <param name="name">The name of the handler.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.GetPlatformOS">
+            <summary>
+            Gets the platform OS for this handler.
+            </summary>
+            <returns>The platform OS as <see cref="F:XmobiTea.ProtonNet.Control.Types.PlatformOS.Windows"/>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteVersion">
+            <summary>
+            Executes the version command (Windows-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteHelp">
+            <summary>
+            Executes the help command (Windows-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteDebug(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Executes the debug command (Windows-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to debug.</param>
+            <param name="controlAgentPath">The path to the control agent executable.</param>
+            <param name="args">Arguments for the debug command.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteStart(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.Action{System.Boolean})">
+            <summary>
+            Executes the start command (Windows-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to start.</param>
+            <param name="onDone">Callback to be invoked when the operation is done.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteStop(System.Action{System.Boolean})">
+            <summary>
+            Executes the stop command (Windows-specific implementation).
+            </summary>
+            <param name="onDone">Callback to be invoked when the operation is done.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteInstall(XmobiTea.ProtonNet.Control.Models.ProtonNetInstance,System.String,System.String)">
+            <summary>
+            Executes the install command (Windows-specific implementation).
+            </summary>
+            <param name="instance">The proton instance to install.</param>
+            <param name="controlAgentPath">The path to the control agent executable.</param>
+            <param name="args">Arguments for the install command.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteDescription">
+            <summary>
+            Updates the description of the service (Windows-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteUninstall">
+            <summary>
+            Executes the uninstall command (Windows-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteStatus">
+            <summary>
+            Executes the status command (Windows-specific implementation).
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.OnExecuteLog(System.String[])">
+            <summary>
+            Executes the log command (Windows-specific implementation).
+            </summary>
+            <param name="logFilePaths">The paths to the log files to open.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Handlers.WindowsExecuteHandler.GetArgsForLog(System.String[])">
+            <summary>
+            Builds arguments for the log command.
+            </summary>
+            <param name="logFilePaths">The paths to the log files.</param>
+            <returns>The arguments for the log command.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.LibraryUtils">
+            <summary>
+            Utility class for various library-related functions.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Helper.LibraryUtils.RootPath">
+            <summary>
+            The relative root path for file operations.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.LibraryUtils.GetDllPath">
+            <summary>
+            Gets the directory path of the current process's executable.
+            </summary>
+            <returns>The directory path of the current process's executable.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.LibraryUtils.CombineFromRootPath(System.String[])">
+            <summary>
+            Combines the root path with additional paths and returns the full path.
+            </summary>
+            <param name="paths">The additional paths to combine with the root path.</param>
+            <returns>The combined full path as a string.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.LibraryUtils.GetPlatformPath">
+            <summary>
+            Gets the platform-specific path based on the directory of the current process's executable.
+            </summary>
+            <returns>The platform-specific path as a string.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.ProtonNetServerSettingsUtils">
+            <summary>
+            Utility class for handling Proton server settings.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Helper.ProtonNetServerSettingsUtils.ProtonNetServerSettingsFilePath">
+            <summary>
+            The path to the Proton server settings JSON file.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.ProtonNetServerSettingsUtils.GetInstance(System.String)">
+            <summary>
+            Retrieves a Proton instance by name from the Proton server settings.
+            </summary>
+            <param name="name">The name of the Proton instance to retrieve.</param>
+            <returns>The ProtonInstance matching the specified name.</returns>
+            <exception cref="T:System.Exception">Thrown when the instance is not found in the settings file.</exception>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.ProtonNetServerSettingsUtils.GetProtonNetServerSettings">
+            <summary>
+            Retrieves the Proton server settings from the settings JSON file.
+            </summary>
+            <returns>The ProtonNetServerSettings object parsed from the JSON file.</returns>
+            <exception cref="T:System.Exception">Thrown when the settings file cannot be found or the Instances field is missing.</exception>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance">
+            <summary>
+            Represents a configuration instance for a ProtonNet server.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.Name">
+            <summary>
+            Gets or sets the name of the ProtonNet instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.Enable">
+            <summary>
+            Gets or sets a value indicating whether the instance is enabled.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.ServerType">
+            <summary>
+            Gets or sets the type of server for this Proton instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.BinPath">
+            <summary>
+            Gets or sets the path to the binary file for the instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.AssemblyName">
+            <summary>
+            Gets or sets the name of the assembly for the instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.StartupSettingsFilePath">
+            <summary>
+            Gets or sets the path to the startup settings file for the instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.Log4NetFilePath">
+            <summary>
+            Gets or sets the path to the Log4Net configuration file for the instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetInstance.StartupType">
+            <summary>
+            Gets or sets the startup type for the instance.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Models.ProtonNetServerSettings">
+            <summary>
+            Represents the settings for a Proton server instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetServerSettings.TargetRuntime">
+            <summary>
+            Gets or sets the target runtime environment for the Proton server.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetServerSettings.TargetFramework">
+            <summary>
+            Gets or sets the target framework for the Proton server.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Models.ProtonNetServerSettings.Instances">
+            <summary>
+            Gets or sets the list of Proton instances configured for the server.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Program">
+            <summary>
+            The Program class is the entry point for the ProtonNet Control application.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Program.Main(System.String[])">
+            <summary>
+            The Main method is the entry point of the application.
+            It initializes and runs the application startup process.
+            </summary>
+            <param name="args">The command-line arguments passed to the application.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Services.IExecuteService">
+            <summary>
+            Interface for executing commands based on the platform.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Services.IExecuteService.Execute(XmobiTea.ProtonNet.Control.Types.Command)">
+            <summary>
+            Executes the specified command.
+            </summary>
+            <param name="command">The command to execute.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Services.ExecuteService">
+            <summary>
+            Implementation of IExecuteService that manages and executes commands using platform-specific handlers.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Services.ExecuteService.executeHandlerDict">
+            <summary>
+            Gets a dictionary mapping platform OS to their corresponding execute handlers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Services.ExecuteService.#ctor">
+            <summary>
+            Initializes a new instance of the ExecuteService class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Services.ExecuteService.AddExecuteHandler(XmobiTea.ProtonNet.Control.Handlers.IExecuteHandler)">
+            <summary>
+            Adds an execute handler to the service.
+            </summary>
+            <param name="executeHandler">The execute handler to add.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Services.ExecuteService.Execute(XmobiTea.ProtonNet.Control.Types.Command)">
+            <summary>
+            Executes the specified command using the appropriate handler for the current platform.
+            </summary>
+            <param name="command">The command to execute.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder">
+            <summary>
+            The StartupAgentArgsBuilder class is used to build startup arguments for the Proton Agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.Name">
+            <summary>
+            Gets or sets the name of the agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.BinPath">
+            <summary>
+            Gets or sets the binary path for the agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.ProtonBinPath">
+            <summary>
+            Gets or sets the Proton binary path.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.LogPath">
+            <summary>
+            Gets or sets the log file path.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.AssemblyName">
+            <summary>
+            Gets or sets the assembly name.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.StartupSettingsFilePath">
+            <summary>
+            Gets or sets the startup settings file path.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.Log4netFilePath">
+            <summary>
+            Gets or sets the Log4net configuration file path.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.ServerType">
+            <summary>
+            Gets or sets the server type.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.AgentType">
+            <summary>
+            Gets or sets the agent type.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.IsBackgroundService">
+            <summary>
+            Gets or sets a value indicating whether the agent runs as a background service.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetName(System.String)">
+            <summary>
+            Sets the name of the agent.
+            </summary>
+            <param name="name">The name of the agent.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetBinPath(System.String)">
+            <summary>
+            Sets the binary path for the agent.
+            </summary>
+            <param name="binPath">The binary path.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetProtonBinPath(System.String)">
+            <summary>
+            Sets the Proton binary path.
+            </summary>
+            <param name="protonBinPath">The Proton binary path.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetLogPath(System.String)">
+            <summary>
+            Sets the log file path.
+            </summary>
+            <param name="logPath">The log file path.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetAssemblyName(System.String)">
+            <summary>
+            Sets the assembly name.
+            </summary>
+            <param name="assemblyName">The assembly name.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetStartupSettingsFilePath(System.String)">
+            <summary>
+            Sets the startup settings file path.
+            </summary>
+            <param name="startupSettingsFilePath">The startup settings file path.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetLog4netFilePath(System.String)">
+            <summary>
+            Sets the Log4net configuration file path.
+            </summary>
+            <param name="log4netFilePath">The Log4net configuration file path.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetServerType(System.String)">
+            <summary>
+            Sets the server type.
+            </summary>
+            <param name="serverType">The server type.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetAgentType(System.String)">
+            <summary>
+            Sets the agent type.
+            </summary>
+            <param name="agentType">The agent type.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.SetIsBackgroundService(System.Boolean)">
+            <summary>
+            Sets whether the agent runs as a background service.
+            </summary>
+            <param name="isBackgroundService">Indicates if the agent is a background service.</param>
+            <returns>The current instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.#ctor">
+            <summary>
+            Private constructor to enforce the use of the builder pattern.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.NewBuilder">
+            <summary>
+            Creates a new instance of StartupAgentArgsBuilder.
+            </summary>
+            <returns>A new instance of StartupAgentArgsBuilder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.StartupAgentArgsBuilder.Build">
+            <summary>
+            Builds the startup arguments string.
+            </summary>
+            <returns>The startup arguments string.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.StaticProperty">
+            <summary>
+            StaticProperty class provides static properties related to ProtonNet Control.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.StaticProperty.ProtonAgentControlVersion">
+            <summary>
+            Represents the version of the Proton Agent Control.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Types.Command">
+            <summary>
+            The Command enum defines the various commands that can be issued to control the ProtonNet application.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Version">
+            <summary>
+            Command to display the version information.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Help">
+            <summary>
+            Command to display help information.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Debug">
+            <summary>
+            Command to run the application in debug mode.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Start">
+            <summary>
+            Command to start the application.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Stop">
+            <summary>
+            Command to stop the application.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Restart">
+            <summary>
+            Command to restart the application.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Install">
+            <summary>
+            Command to install the application as a service.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Uninstall">
+            <summary>
+            Command to uninstall the application service.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Status">
+            <summary>
+            Command to check the status of the application.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.Command.Log">
+            <summary>
+            Command to view application logs.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Types.PlatformOS">
+            <summary>
+            The PlatformOS enum represents different operating systems that the application may run on.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.PlatformOS.Windows">
+            <summary>
+            Represents the Windows operating system.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.PlatformOS.Linux">
+            <summary>
+            Represents the Linux operating system.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.PlatformOS.OSX">
+            <summary>
+            Represents the OSX (Mac) operating system.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Types.PlatformOS.Unknown">
+            <summary>
+            Represents an unknown or unsupported operating system.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmobiTea.ProtonNet.Control.Helper</name>
+    </assembly>
+    <members>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.IStartupSettingsReader">
+            <summary>
+            Defines methods for reading startup settings related to Web API and Socket configurations.
+            This interface provides methods to load startup settings from JSON files for both Web API
+            and Socket applications.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.IStartupSettingsReader.LoadWebApiStartupSettings(System.String)">
+            <summary>
+            Loads the Web API startup settings from the specified file path.
+            It reads the content of the file and deserializes it into an instance of 
+            <see cref="T:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings"/>.
+            </summary>
+            <param name="startupSettingsFilePath">The path to the JSON file containing the Web API startup settings.</param>
+            <returns>An instance of <see cref="T:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings"/> deserialized from the JSON file.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.IStartupSettingsReader.LoadSocketStartupSettings(System.String)">
+            <summary>
+            Loads the Socket startup settings from the specified file path.
+            </summary>
+            <param name="startupSettingsFilePath">The path to the JSON file containing the Socket startup settings.</param>
+            <returns>An instance of <see cref="T:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings"/> deserialized from the JSON file.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.AuthTokenSettings">
+            <summary>
+            Settings auth token service
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.AuthTokenSettings.Password">
+            <summary>
+            Gets the password of UserPeerAuthTokenService
+            Default is empty.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.ThreadPoolSizeSettings">
+            <summary>
+            Settings for thread pool size configuration.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.ThreadPoolSizeSettings.OtherFiber">
+            <summary>
+            The number of fibers used for other purposes.
+            Default is 2.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.ThreadPoolSizeSettings.ReceivedFiber">
+            <summary>
+            The number of fibers used for handling received data.
+            Default is 12.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.SslConfigSettings">
+            <summary>
+            Configuration settings for SSL/TLS.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SslConfigSettings.Enable">
+            <summary>
+            Indicates whether SSL/TLS is enabled.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SslConfigSettings.Port">
+            <summary>
+            Port number for SSL/TLS.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SslConfigSettings.CertFilePath">
+            <summary>
+            Path to the SSL/TLS certificate file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SslConfigSettings.CertPassword">
+            <summary>
+            Password for the SSL/TLS certificate.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings">
+            <summary>
+            Configuration settings for session management.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.AcceptorBacklog">
+            <summary>
+            Maximum number of queued connections for the server.
+            Default is 1024.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.DualMode">
+            <summary>
+            Indicates whether dual mode (IPv4/IPv6) is enabled.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.KeepAlive">
+            <summary>
+            Indicates whether keep-alive is enabled for TCP connections.
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.TcpKeepAliveTime">
+            <summary>
+            TCP keep-alive time in seconds.
+            Default is -1 (disabled).
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.TcpKeepAliveInterval">
+            <summary>
+            TCP keep-alive interval in seconds.
+            Default is -1 (disabled).
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.TcpKeepAliveRetryCount">
+            <summary>
+            Number of TCP keep-alive retry attempts.
+            Default is -1 (disabled).
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.NoDelay">
+            <summary>
+            Indicates whether Nagle's algorithm is disabled (no delay).
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.ReuseAddress">
+            <summary>
+            Indicates whether the address can be reused.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.ExclusiveAddressUse">
+            <summary>
+            Indicates whether exclusive address use is enforced.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.ReceiveBufferLimit">
+            <summary>
+            Limit of the receive buffer size.
+            Default is 0 (no limit).
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.ReceiveBufferCapacity">
+            <summary>
+            Capacity of the receive buffer in bytes.
+            Default is 8096.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.SendBufferLimit">
+            <summary>
+            Limit of the send buffer size.
+            Default is 0 (no limit).
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SessionConfigSettings.SendBufferCapacity">
+            <summary>
+            Capacity of the send buffer in bytes.
+            Default is 8096.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.HttpServerSettings">
+            <summary>
+            Settings for HTTP server configuration.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.HttpServerSettings.Enable">
+            <summary>
+            Indicates whether the HTTP server is enabled.
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.HttpServerSettings.Address">
+            <summary>
+            Address to bind the HTTP server to.
+            Default is "0.0.0.0".
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.HttpServerSettings.Port">
+            <summary>
+            Port number for the HTTP server.
+            Default is 22202.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.HttpServerSettings.SessionConfig">
+            <summary>
+            Configuration settings for sessions.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.HttpServerSettings.SslConfig">
+            <summary>
+            Configuration settings for SSL/TLS.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings">
+            <summary>
+            Startup settings for Web API.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings.Name">
+            <summary>
+            Name of the Web API.
+            Default is an empty string.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings.MaxPendingRequest">
+            <summary>
+            Maximum number of pending requests for the Web API.
+            Default is 10000.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings.MaxSessionPendingRequest">
+            <summary>
+            Maximum number of pending requests per session.
+            Default is 100.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings.MaxSessionRequestPerSecond">
+            <summary>
+            Maximum number of requests per second per session.
+            Default is 50.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings.HttpServer">
+            <summary>
+            HTTP server settings.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings.ThreadPoolSize">
+            <summary>
+            Thread pool size settings.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings.AuthToken">
+            <summary>
+            Thread pool size settings.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.TcpServerSettings">
+            <summary>
+            Settings for TCP server configuration.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.TcpServerSettings.Enable">
+            <summary>
+            Indicates whether the TCP server is enabled.
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.TcpServerSettings.Address">
+            <summary>
+            Address to bind the TCP server to.
+            Default is "0.0.0.0".
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.TcpServerSettings.Port">
+            <summary>
+            Port number for the TCP server.
+            Default is 32202.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.TcpServerSettings.SessionConfig">
+            <summary>
+            Configuration settings for sessions.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.TcpServerSettings.SslConfig">
+            <summary>
+            Configuration settings for SSL/TLS.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.UdpSessionConfigSettings">
+            <summary>
+            Configuration settings for UDP session.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpSessionConfigSettings.DualMode">
+            <summary>
+            Indicates whether dual mode (IPv4/IPv6) is enabled.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpSessionConfigSettings.ReuseAddress">
+            <summary>
+            Indicates whether the address can be reused.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpSessionConfigSettings.ExclusiveAddressUse">
+            <summary>
+            Indicates whether exclusive address use is enforced.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpSessionConfigSettings.ReceiveBufferLimit">
+            <summary>
+            Limit of the receive buffer size.
+            Default is 0 (no limit).
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpSessionConfigSettings.ReceiveBufferCapacity">
+            <summary>
+            Capacity of the receive buffer in bytes.
+            Default is 8096.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpSessionConfigSettings.SendBufferLimit">
+            <summary>
+            Limit of the send buffer size.
+            Default is 0 (no limit).
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.UdpServerSettings">
+            <summary>
+            Settings for UDP server configuration.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpServerSettings.Enable">
+            <summary>
+            Indicates whether the UDP server is enabled.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpServerSettings.Address">
+            <summary>
+            Address to bind the UDP server to.
+            Default is "0.0.0.0".
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpServerSettings.Port">
+            <summary>
+            Port number for the UDP server.
+            Default is 42202.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.UdpServerSettings.SessionConfig">
+            <summary>
+            Configuration settings for sessions.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.WebSocketServerSettings">
+            <summary>
+            Settings for WebSocket server configuration.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebSocketServerSettings.Enable">
+            <summary>
+            Indicates whether the WebSocket server is enabled.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebSocketServerSettings.Address">
+            <summary>
+            Address to bind the WebSocket server to.
+            Default is "0.0.0.0".
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebSocketServerSettings.Port">
+            <summary>
+            Port number for the WebSocket server.
+            Default is 52202.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebSocketServerSettings.MaxFrameSize">
+            <summary>
+            Maximum frame size for WebSocket messages.
+            Default is 8096 bytes.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebSocketServerSettings.SessionConfig">
+            <summary>
+            Configuration settings for sessions.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.WebSocketServerSettings.SslConfig">
+            <summary>
+            Configuration settings for SSL/TLS.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings">
+            <summary>
+            Startup settings for the socket server.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.Name">
+            <summary>
+            Name of the socket server.
+            Default is an empty string.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.MaxSession">
+            <summary>
+            Maximum number of sessions for the socket server.
+            Default is 5000.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.MaxPendingRequest">
+            <summary>
+            Maximum number of pending requests for the socket server.
+            Default is 10000.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.MaxSessionPendingRequest">
+            <summary>
+            Maximum number of pending requests per session.
+            Default is 100.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.MaxSessionRequestPerSecond">
+            <summary>
+            Maximum number of requests per second per session.
+            Default is 50.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.MaxUdpSessionRequestPerUser">
+            <summary>
+            Maximum number of UDP session requests per user.
+            Default is 1.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.MaxTcpSessionRequestPerUser">
+            <summary>
+            Maximum number of TCP session requests per user.
+            Default is 1.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.MaxWsSessionRequestPerUser">
+            <summary>
+            Maximum number of WebSocket session requests per user.
+            Default is 1.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.HandshakeTimeoutInSeconds">
+            <summary>
+            Timeout for handshake in seconds.
+            Default is 300 seconds.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.IdleTimeoutInSeconds">
+            <summary>
+            Timeout for idle sessions in seconds.
+            Default is 120 seconds.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.TcpServer">
+            <summary>
+            TCP server settings.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.UdpServer">
+            <summary>
+            UDP server settings.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.WebSocketServer">
+            <summary>
+            WebSocket server settings.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.ThreadPoolSize">
+            <summary>
+            Thread pool size settings.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings.AuthToken">
+            <summary>
+            Auth token settings.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Helper.StartupSettingsReader">
+            <summary>
+            Provides implementations for reading Web API and Socket startup settings from JSON files.
+            This class implements the <see cref="T:XmobiTea.ProtonNet.Control.Helper.IStartupSettingsReader"/> interface to deserialize 
+            JSON files into their corresponding startup settings objects.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.StartupSettingsReader.LoadWebApiStartupSettings(System.String)">
+            <summary>
+            Loads the Web API startup settings from the specified file path.
+            It reads the content of the file and deserializes it into an instance of 
+            <see cref="T:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings"/>.
+            </summary>
+            <param name="startupSettingsFilePath">The path to the JSON file containing the Web API startup settings.</param>
+            <returns>An instance of <see cref="T:XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings"/> deserialized from the JSON file.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Helper.StartupSettingsReader.LoadSocketStartupSettings(System.String)">
+            <summary>
+            Loads the Socket startup settings from the specified file path.
+            It reads the content of the file and deserializes it into an instance of 
+            <see cref="T:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings"/>.
+            </summary>
+            <param name="startupSettingsFilePath">The path to the JSON file containing the Socket startup settings.</param>
+            <returns>An instance of <see cref="T:XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings"/> deserialized from the JSON file.</returns>
+        </member>
+    </members>
+</doc>

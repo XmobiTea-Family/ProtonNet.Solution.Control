@@ -1,0 +1,1848 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmobiTea.ProtonNet.Server</name>
+    </assembly>
+    <members>
+        <member name="T:XmobiTea.ProtonNet.Server.Constance">
+            <summary>
+            Contains constant values used in the ProtonNet server.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Server.Constance.ProtonServerVersion">
+            <summary>
+            Represents the version of the Proton server.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Context.IServerContext">
+            <summary>
+            Defines the interface for server context services.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.IServerContext.GetSessionService">
+            <summary>
+            Gets the session service.
+            </summary>
+            <returns>The session service instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.IServerContext.GetUserPeerSessionService">
+            <summary>
+            Gets the user peer session service.
+            </summary>
+            <returns>The user peer session service instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.IServerContext.GetInitRequestProviderService">
+            <summary>
+            Gets the initialization request provider service.
+            </summary>
+            <returns>The initialization request provider service instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.IServerContext.GetByteArrayManagerService">
+            <summary>
+            Gets the byte array manager service.
+            </summary>
+            <returns>The byte array manager service instance.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Context.ServerContext">
+            <summary>
+            Implements the server context services.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Context.ServerContext.sessionService">
+            <summary>
+            The session service instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Context.ServerContext.userPeerSessionService">
+            <summary>
+            The user peer session service instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Context.ServerContext.initRequestProviderService">
+            <summary>
+            The initialization request provider service instance.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Context.ServerContext.byteArrayManagerService">
+            <summary>
+            The byte array manager service instance.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.ServerContext.GetSessionService">
+            <summary>
+            Gets the session service.
+            </summary>
+            <returns>The session service instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.ServerContext.GetUserPeerSessionService">
+            <summary>
+            Gets the user peer session service.
+            </summary>
+            <returns>The user peer session service instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.ServerContext.GetInitRequestProviderService">
+            <summary>
+            Gets the initialization request provider service.
+            </summary>
+            <returns>The initialization request provider service instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.ServerContext.GetByteArrayManagerService">
+            <summary>
+            Gets the byte array manager service.
+            </summary>
+            <returns>The byte array manager service instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Context.ServerContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Context.ServerContext"/> class.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.Attributes.AllowAnonymousAttribute">
+            <summary>
+            Indicates that the attributed class allows anonymous access.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.Attributes.DisableHandlerAttribute">
+            <summary>
+            Indicates that the attributed class should have its handler functionality disabled.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.Attributes.OnlyServerAttribute">
+            <summary>
+            Specifies that the attributed class EventHandler or RequestHandler, sender must is Server can handle.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.IEventHandler">
+            <summary>
+            Defines the interface for event handlers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.IEventHandler.GetEventCode">
+            <summary>
+            Gets the event code.
+            </summary>
+            <returns>The event code as a string.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.IEventHandler.Handle(XmobiTea.ProtonNet.Networking.OperationEvent,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the event with specified parameters.
+            </summary>
+            <param name="operationEvent">The operation event to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the event.</param>
+            <param name="session">The session associated with the event.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.EventHandler">
+            <summary>
+            Provides a base implementation for event handlers.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Handlers.EventHandler.logger">
+            <summary>
+            Logger instance for logging events.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.EventHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Handlers.EventHandler"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.EventHandler.GetEventCode">
+            <summary>
+            Gets the event code.
+            </summary>
+            <returns>The event code as a string.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.EventHandler.Handle(XmobiTea.ProtonNet.Networking.OperationEvent,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the event with specified parameters.
+            </summary>
+            <param name="operationEvent">The operation event to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the event.</param>
+            <param name="session">The session associated with the event.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.EventHandler`1">
+            <summary>
+            Provides a generic implementation for event handlers with a specific event model.
+            </summary>
+            <typeparam name="TEventModel">The type of the event model.</typeparam>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Handlers.EventHandler`1.dataConverter">
+            <summary>
+            Data converter for converting data.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.EventHandler`1.Handle(XmobiTea.ProtonNet.Networking.OperationEvent,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the event with specified parameters and converts it to the event model.
+            </summary>
+            <param name="operationEvent">The operation event to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the event.</param>
+            <param name="session">The session associated with the event.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.EventHandler`1.ConvertToEventModel(XmobiTea.ProtonNet.Networking.OperationEvent)">
+            <summary>
+            Converts the operation event to the specific event model.
+            </summary>
+            <param name="operationEvent">The operation event to convert.</param>
+            <returns>The event model.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.EventHandler`1.Handle(`0,XmobiTea.ProtonNet.Networking.OperationEvent,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the event with the specified event model.
+            </summary>
+            <param name="eventModel">The event model to handle.</param>
+            <param name="operationEvent">The operation event to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the event.</param>
+            <param name="session">The session associated with the event.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.IRequestHandler">
+            <summary>
+            Defines the interface for request handlers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.IRequestHandler.GetOperationCode">
+            <summary>
+            Gets the operation code.
+            </summary>
+            <returns>The operation code as a string.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.IRequestHandler.Handle(XmobiTea.ProtonNet.Networking.OperationRequest,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the operation request asynchronously.
+            </summary>
+            <param name="operationRequest">The operation request to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the request.</param>
+            <param name="session">The session associated with the request.</param>
+            <returns>A task representing the asynchronous operation, with an <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> result.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.RequestHandler">
+            <summary>
+            Provides a base implementation for request handlers.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Handlers.RequestHandler.logger">
+            <summary>
+            Logger instance for logging events.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.RequestHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Handlers.RequestHandler"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.RequestHandler.GetOperationCode">
+            <summary>
+            Gets the operation code.
+            </summary>
+            <returns>The operation code as a string.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.RequestHandler.Handle(XmobiTea.ProtonNet.Networking.OperationRequest,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the operation request asynchronously.
+            </summary>
+            <param name="operationRequest">The operation request to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the request.</param>
+            <param name="session">The session associated with the request.</param>
+            <returns>A task representing the asynchronous operation, with an <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> result.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Handlers.RequestHandler`1">
+            <summary>
+            Provides a generic implementation for request handlers with a specific request model.
+            </summary>
+            <typeparam name="TRequestModel">The type of the request model.</typeparam>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Handlers.RequestHandler`1.dataConverter">
+            <summary>
+            Data converter for converting data.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.RequestHandler`1.Handle(XmobiTea.ProtonNet.Networking.OperationRequest,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the operation request asynchronously and converts it to the request model.
+            </summary>
+            <param name="operationRequest">The operation request to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the request.</param>
+            <param name="session">The session associated with the request.</param>
+            <returns>A task representing the asynchronous operation, with an <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> result.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.RequestHandler`1.ConvertToRequestModel(XmobiTea.ProtonNet.Networking.OperationRequest)">
+            <summary>
+            Converts the operation request to the specific request model.
+            </summary>
+            <param name="operationRequest">The operation request to convert.</param>
+            <returns>The request model.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Handlers.RequestHandler`1.Handle(`0,XmobiTea.ProtonNet.Networking.OperationRequest,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the operation request with the specified request model.
+            </summary>
+            <param name="requestModel">The request model to handle.</param>
+            <param name="operationRequest">The operation request to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer associated with the request.</param>
+            <param name="session">The session associated with the request.</param>
+            <returns>A task representing the asynchronous operation, with an <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> result.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Helper.OperationHelper">
+            <summary>
+            Provides helper methods for handling operation responses.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.OperationHelper.HandleOperationUnknownCode(XmobiTea.ProtonNet.Networking.OperationRequest,System.String)">
+            <summary>
+            Handles an unknown operation code.
+            </summary>
+            <param name="operationRequest">The operation request associated with the unknown code.</param>
+            <param name="debugMessage">An optional debug message for additional information.</param>
+            <returns>An <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> indicating the operation code is unknown.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.OperationHelper.HandleOperationInvalid(XmobiTea.ProtonNet.Networking.OperationRequest,System.String)">
+            <summary>
+            Handles an invalid operation.
+            </summary>
+            <param name="operationRequest">The operation request associated with the invalid operation.</param>
+            <param name="debugMessage">An optional debug message for additional information.</param>
+            <returns>An <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> indicating the operation is invalid.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.OperationHelper.HandleOperationInvalidInServer(XmobiTea.ProtonNet.Networking.OperationRequest,System.String)">
+            <summary>
+            Handles an invalid operation specific to server-side issues.
+            </summary>
+            <param name="operationRequest">The operation request associated with the invalid operation.</param>
+            <param name="debugMessage">An optional debug message for additional information.</param>
+            <returns>An <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> indicating the operation is invalid in the server context.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.OperationHelper.HandleOperationNotAuthorized(XmobiTea.ProtonNet.Networking.OperationRequest,System.String)">
+            <summary>
+            Handles an unauthorized operation request.
+            </summary>
+            <param name="operationRequest">The operation request associated with the unauthorized access.</param>
+            <param name="debugMessage">An optional debug message for additional information.</param>
+            <returns>An <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> indicating the operation is not authorized.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.OperationHelper.HandleOperationOk(XmobiTea.ProtonNet.Networking.OperationRequest,XmobiTea.Data.GNHashtable,System.String)">
+            <summary>
+            Handles a successful operation request.
+            </summary>
+            <param name="operationRequest">The operation request that was successful.</param>
+            <param name="parameters">Parameters to include in the response.</param>
+            <param name="debugMessage">An optional debug message for additional information.</param>
+            <returns>An <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/> indicating the operation was successful.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Helper.Random">
+            <summary>
+            Provides methods for generating random numbers within specified ranges.
+            This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Helper.Random.rd">
+            <summary>
+            Gets the instance of the random number generator.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.Random.#cctor">
+            <summary>
+            Static constructor to initialize the random number generator.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.Random.Range(System.Single,System.Single)">
+            <summary>
+            Generates a random float number within the specified range.
+            </summary>
+            <param name="min">The inclusive lower bound of the random number returned.</param>
+            <param name="max">The exclusive upper bound of the random number returned.</param>
+            <returns>A single-precision floating point number that is greater than or equal to <paramref name="min"/> and less than <paramref name="max"/>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Helper.Random.Range(System.Int32,System.Int32)">
+            <summary>
+            Generates a random integer within the specified range.
+            </summary>
+            <param name="min">The inclusive lower bound of the random number returned.</param>
+            <param name="max">The exclusive upper bound of the random number returned.</param>
+            <returns>A 32-bit signed integer that is greater than or equal to <paramref name="min"/> and less than <paramref name="max"/>.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.IChannelMediator">
+            <summary>
+            Defines methods for managing channel membership and operations.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannelMediator.OnJoin(System.String)">
+            <summary>
+            Handles a user joining the channel.
+            </summary>
+            <param name="userId">The ID of the user joining the channel.</param>
+            <returns>True if the user successfully joined; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannelMediator.OnLeave(System.String)">
+            <summary>
+            Handles a user leaving the channel.
+            </summary>
+            <param name="userId">The ID of the user leaving the channel.</param>
+            <returns>True if the user successfully left; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannelMediator.OnClear">
+            <summary>
+            Clears all users from the channel.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.IChannel">
+            <summary>
+            Defines methods for channel operations, including user management and properties.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.GetId">
+            <summary>
+            Gets the unique identifier of the channel.
+            </summary>
+            <returns>The channel ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.Count">
+            <summary>
+            Gets the number of users in the channel.
+            </summary>
+            <returns>The number of users.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.Join(System.String)">
+            <summary>
+            Adds a user to the channel.
+            </summary>
+            <param name="userId">The ID of the user to add.</param>
+            <returns>True if the user was successfully added; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.Leave(System.String)">
+            <summary>
+            Removes a user from the channel.
+            </summary>
+            <param name="userId">The ID of the user to remove.</param>
+            <returns>True if the user was successfully removed; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.Contains(System.String)">
+            <summary>
+            Checks if the user is in the channel.
+            </summary>
+            <param name="userId">The ID of the user to check.</param>
+            <returns>True if the user is in the channel; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.GetUserIds">
+            <summary>
+            Gets the IDs of all users in the channel.
+            </summary>
+            <returns>An enumerable collection of user IDs.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.Clear">
+            <summary>
+            Removes all users from the channel.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IChannel.GetProperty">
+            <summary>
+            Gets the properties associated with the channel.
+            </summary>
+            <returns>An <see cref="T:XmobiTea.ProtonNet.Server.Models.IProperty"/> representing the channel's properties.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.Channel">
+            <summary>
+            Implements the channel interface and provides methods for managing users and channel properties.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.Channel.userList">
+            <summary>
+            List of users currently in the channel.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.Channel.property">
+            <summary>
+            Properties associated with the channel.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.GetId">
+            <summary>
+            Gets the unique identifier of the channel.
+            </summary>
+            <returns>The channel ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.GetUserIds">
+            <summary>
+            Gets the IDs of all users in the channel.
+            </summary>
+            <returns>An enumerable collection of user IDs.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.Join(System.String)">
+            <summary>
+            Adds a user to the channel.
+            </summary>
+            <param name="userId">The ID of the user to add.</param>
+            <returns>True if the user was successfully added; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.OnJoin(System.String)">
+            <summary>
+            Handles a user joining the channel.
+            </summary>
+            <param name="userId">The ID of the user joining the channel.</param>
+            <returns>True if the user successfully joined; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.Leave(System.String)">
+            <summary>
+            Removes a user from the channel.
+            </summary>
+            <param name="userId">The ID of the user to remove.</param>
+            <returns>True if the user was successfully removed; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.OnLeave(System.String)">
+            <summary>
+            Handles a user leaving the channel.
+            </summary>
+            <param name="userId">The ID of the user leaving the channel.</param>
+            <returns>True if the user successfully left; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.Count">
+            <summary>
+            Gets the number of users in the channel.
+            </summary>
+            <returns>The number of users.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.Clear">
+            <summary>
+            Removes all users from the channel.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.OnClear">
+            <summary>
+            Clears the list of users in the channel.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.GetProperty">
+            <summary>
+            Gets the properties associated with the channel.
+            </summary>
+            <returns>An <see cref="T:XmobiTea.ProtonNet.Server.Models.IProperty"/> representing the channel's properties.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.Contains(System.String)">
+            <summary>
+            Checks if the user is in the channel.
+            </summary>
+            <param name="userId">The ID of the user to check.</param>
+            <returns>True if the user is in the channel; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Channel.#ctor(System.String,XmobiTea.ProtonNet.Server.Services.IChannelService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Models.Channel"/> class.
+            </summary>
+            <param name="id">The unique identifier of the channel.</param>
+            <param name="channelService">The service used to manage channel operations.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.IProperty">
+            <summary>
+            Defines methods for managing property data with a string key.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IProperty.Get``1(System.String)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <typeparam name="TData">The type of the data to retrieve.</typeparam>
+            <param name="key">The key associated with the data.</param>
+            <returns>The data associated with the key.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IProperty.Set``1(System.String,``0)">
+            <summary>
+            Sets the value for the specified key.
+            </summary>
+            <typeparam name="TData">The type of the data to set.</typeparam>
+            <param name="key">The key to associate with the data.</param>
+            <param name="data">The data to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IProperty.TryGet``1(System.String,``0@)">
+            <summary>
+            Attempts to get the value associated with the specified key.
+            </summary>
+            <typeparam name="TData">The type of the data to retrieve.</typeparam>
+            <param name="key">The key associated with the data.</param>
+            <param name="data">The data associated with the key, if found.</param>
+            <returns>True if the data was found; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IProperty.Contains(System.String)">
+            <summary>
+            Checks if the specified key exists.
+            </summary>
+            <param name="key">The key to check.</param>
+            <returns>True if the key exists; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IProperty.Remove(System.String)">
+            <summary>
+            Removes the value associated with the specified key.
+            </summary>
+            <param name="key">The key to remove.</param>
+            <returns>True if the key was successfully removed; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.Property">
+            <summary>
+            Implements the <see cref="T:XmobiTea.ProtonNet.Server.Models.IProperty"/> interface for managing properties with a thread-safe dictionary.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.Property._internalProperty">
+            <summary>
+            Internal dictionary to store property values.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Property.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Models.Property"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Property.Contains(System.String)">
+            <summary>
+            Checks if the specified key exists.
+            </summary>
+            <param name="key">The key to check.</param>
+            <returns>True if the key exists; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Property.Remove(System.String)">
+            <summary>
+            Removes the value associated with the specified key.
+            </summary>
+            <param name="key">The key to remove.</param>
+            <returns>True if the key was successfully removed; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Property.Set``1(System.String,``0)">
+            <summary>
+            Sets the value for the specified key.
+            </summary>
+            <typeparam name="TData">The type of the data to set.</typeparam>
+            <param name="key">The key to associate with the data.</param>
+            <param name="data">The data to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Property.Get``1(System.String)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <typeparam name="TData">The type of the data to retrieve.</typeparam>
+            <param name="key">The key associated with the data.</param>
+            <returns>The data associated with the key.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.Property.TryGet``1(System.String,``0@)">
+            <summary>
+            Attempts to get the value associated with the specified key.
+            </summary>
+            <typeparam name="TData">The type of the data to retrieve.</typeparam>
+            <param name="key">The key associated with the data.</param>
+            <param name="data">The data associated with the key, if found.</param>
+            <returns>True if the data was found; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.ISessionIdSetter">
+            <summary>
+            Defines a method for setting the session ID.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISessionIdSetter.SetSessionId(System.String)">
+            <summary>
+            Sets the session ID.
+            </summary>
+            <param name="sessionId">The session ID to set.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.IEncryptKeySetter">
+            <summary>
+            Defines a method for setting the encryption key.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IEncryptKeySetter.SetEncryptKey(System.Byte[])">
+            <summary>
+            Sets the encryption key.
+            </summary>
+            <param name="encryptKey">The encryption key to set.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.ISessionFiber">
+            <summary>
+            Defines a method for retrieving the fiber associated with the session.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISessionFiber.GetFiber">
+            <summary>
+            Gets the fiber associated with the session.
+            </summary>
+            <returns>The fiber associated with the session.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.ISession">
+            <summary>
+            Defines methods for accessing session information.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISession.GetConnectionId">
+            <summary>
+            Gets the connection ID.
+            </summary>
+            <returns>The connection ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISession.GetServerSessionId">
+            <summary>
+            Gets the server session ID.
+            </summary>
+            <returns>The server session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISession.GetEncryptKey">
+            <summary>
+            Gets the encryption key.
+            </summary>
+            <returns>The encryption key.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISession.GetSessionId">
+            <summary>
+            Gets the session ID.
+            </summary>
+            <returns>The session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISession.GetRemoteIP">
+            <summary>
+            Gets the remote IP address.
+            </summary>
+            <returns>The remote IP address.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISession.GetRemotePort">
+            <summary>
+            Gets the remote port.
+            </summary>
+            <returns>The remote port.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest">
+            <summary>
+            Defines the properties required for a session initialization request.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest.ConnectionId">
+            <summary>
+            Gets the connection ID.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest.ServerSessionId">
+            <summary>
+            Gets the server session ID.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest.SessionId">
+            <summary>
+            Gets the session ID.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest.Fiber">
+            <summary>
+            Gets the fiber associated with the session.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.SessionInitRequest">
+            <summary>
+            Implements the <see cref="T:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest"/> interface for session initialization requests.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.SessionInitRequest.ConnectionId">
+            <summary>
+            Gets or sets the connection ID.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.SessionInitRequest.ServerSessionId">
+            <summary>
+            Gets or sets the server session ID.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.SessionInitRequest.SessionId">
+            <summary>
+            Gets or sets the session ID.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.SessionInitRequest.Fiber">
+            <summary>
+            Gets or sets the fiber associated with the session.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.ISetterUserPeer">
+            <summary>
+            Defines methods for setting user peer properties.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISetterUserPeer.SetUserId(System.String)">
+            <summary>
+            Sets the user ID.
+            </summary>
+            <param name="userId">The user ID to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISetterUserPeer.SetSessionId(System.String)">
+            <summary>
+            Sets the session ID.
+            </summary>
+            <param name="sessionId">The session ID to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ISetterUserPeer.SetPeerType(XmobiTea.ProtonNet.Server.Types.PeerType)">
+            <summary>
+            Sets the peer type.
+            </summary>
+            <param name="peerType">The peer type to set.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.IUserPeer">
+            <summary>
+            Defines methods for accessing user peer properties.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IUserPeer.GetSessionId">
+            <summary>
+            Gets the session ID.
+            </summary>
+            <returns>The session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IUserPeer.GetUserId">
+            <summary>
+            Gets the user ID.
+            </summary>
+            <returns>The user ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IUserPeer.GetPeerType">
+            <summary>
+            Gets the peer type.
+            </summary>
+            <returns>The peer type.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IUserPeer.GetProperty">
+            <summary>
+            Gets the property associated with the user peer.
+            </summary>
+            <returns>The property associated with the user peer.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.IUserPeer.IsAuthenticated">
+            <summary>
+            Checks if the user peer is authenticated.
+            </summary>
+            <returns>True if authenticated; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.UserPeer">
+            <summary>
+            Implements the <see cref="T:XmobiTea.ProtonNet.Server.Models.IUserPeer"/> and <see cref="T:XmobiTea.ProtonNet.Server.Models.ISetterUserPeer"/> interfaces for managing user peer data.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Models.UserPeer"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.GetUserId">
+            <summary>
+            Gets the user ID.
+            </summary>
+            <returns>The user ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.SetUserId(System.String)">
+            <summary>
+            Sets the user ID.
+            </summary>
+            <param name="userId">The user ID to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.GetSessionId">
+            <summary>
+            Gets the session ID.
+            </summary>
+            <returns>The session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.SetSessionId(System.String)">
+            <summary>
+            Sets the session ID.
+            </summary>
+            <param name="sessionId">The session ID to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.GetPeerType">
+            <summary>
+            Gets the peer type.
+            </summary>
+            <returns>The peer type.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.SetPeerType(XmobiTea.ProtonNet.Server.Types.PeerType)">
+            <summary>
+            Sets the peer type.
+            </summary>
+            <param name="peerType">The peer type to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.IsAuthenticated">
+            <summary>
+            Checks if the user peer is authenticated.
+            </summary>
+            <returns>True if authenticated; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.SetAuthenticated(System.Boolean)">
+            <summary>
+            Sets the authenticated state.
+            </summary>
+            <param name="isAuthenticated">The authenticated state to set.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.UserPeer.GetProperty">
+            <summary>
+            Gets the property associated with the user peer.
+            </summary>
+            <returns>The property associated with the user peer.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.ServerNetworkStatistics">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNetCommon.IServerNetworkStatistics"/> to aggregate network statistics from multiple sources.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ServerNetworkStatistics.#ctor(XmobiTea.ProtonNetCommon.IServerNetworkStatistics[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Models.ServerNetworkStatistics"/> class.
+            </summary>
+            <param name="networkStatistics">An array of <see cref="T:XmobiTea.ProtonNetCommon.IServerNetworkStatistics"/> instances to aggregate.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ServerNetworkStatistics.GetBytesSent">
+            <summary>
+            Gets the total number of bytes sent.
+            </summary>
+            <returns>The total number of bytes sent.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ServerNetworkStatistics.GetBytesReceived">
+            <summary>
+            Gets the total number of bytes received.
+            </summary>
+            <returns>The total number of bytes received.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ServerNetworkStatistics.GetPacketSent">
+            <summary>
+            Gets the total number of packets sent.
+            </summary>
+            <returns>The total number of packets sent.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Models.ServerNetworkStatistics.GetPacketReceived">
+            <summary>
+            Gets the total number of packets received.
+            </summary>
+            <returns>The total number of packets received.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload">
+            <summary>
+            Represents the payload of a user peer token, implementing <see cref="T:XmobiTea.ProtonNet.Token.Models.ITokenPayload"/>.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload.UserId">
+            <summary>
+            Gets or sets the userId.
+            </summary>
+            <value>The userId.</value>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload.PeerType">
+            <summary>
+            Gets or sets the peer type as a byte value.
+            </summary>
+            <value>The peer type.</value>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload.SessionId">
+            <summary>
+            Gets or sets the session ID.
+            </summary>
+            <value>The session ID.</value>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IByteArrayManagerService">
+            <summary>
+            Interface that defines methods for renting and returning byte arrays 
+            based on a given buffer, position, and count.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IByteArrayManagerService.Rent(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Rents a byte array from the pool or creates a new one if necessary.
+            Copies data from the given buffer starting at the specified position.
+            </summary>
+            <param name="buffer">The source buffer from which to copy data.</param>
+            <param name="position">The starting position in the source buffer.</param>
+            <param name="length">The number of bytes to copy.</param>
+            <returns>A byte array containing the copied data.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IByteArrayManagerService.Return(System.Byte[])">
+            <summary>
+            Returns a byte array to the pool for reuse.
+            </summary>
+            <param name="buffer">The byte array to be returned to the pool.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.ByteArrayManagerService">
+            <summary>
+            Service that manages byte array pooling by renting and returning byte arrays.
+            Implements the IByteArrayManagerService interface.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Services.ByteArrayManagerService._pools">
+            <summary>
+            Concurrent dictionary that maps the size of byte arrays to their corresponding stacks for pooling.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ByteArrayManagerService.#ctor">
+            <summary>
+            Initializes a new instance of the ByteArrayManagerService class and 
+            sets up the pool storage.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ByteArrayManagerService.Rent(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Rents a byte array from the pool with a size based on the length - position 
+            of the source buffer. If no matching array is available in the pool, a new one is created.
+            The content of the source buffer is copied to the rented array.
+            </summary>
+            <param name="buffer">The source buffer to copy data from.</param>
+            <param name="position">The starting index in the source buffer.</param>
+            <param name="length">The length of the data to copy from the source buffer.</param>
+            <returns>A rented byte array with the copied data.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ByteArrayManagerService.Return(System.Byte[])">
+            <summary>
+            Returns the specified byte array to the pool for reuse. 
+            The pool is based on the size of the array being returned.
+            </summary>
+            <param name="buffer">The byte array to be returned to the pool.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IChannelService">
+            <summary>
+            Provides methods for managing channels and user memberships in channels.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IChannelService.GetUserIdsInChannel(System.String)">
+            <summary>
+            Gets the user IDs in a specific channel.
+            </summary>
+            <param name="channelId">The ID of the channel.</param>
+            <returns>A collection of user IDs in the specified channel.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IChannelService.InChannel(System.String,System.String)">
+            <summary>
+            Checks if a user is in a specific channel.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="channelId">The ID of the channel.</param>
+            <returns><c>true</c> if the user is in the channel; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IChannelService.JoinChannel(System.String,System.String)">
+            <summary>
+            Adds a user to a specific channel.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="channelId">The ID of the channel.</param>
+            <returns><c>true</c> if the user joined the channel successfully; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IChannelService.LeaveChannel(System.String,System.String)">
+            <summary>
+            Removes a user from a specific channel.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="channelId">The ID of the channel.</param>
+            <returns><c>true</c> if the user left the channel successfully; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IChannelService.LeaveAllChannel(System.String)">
+            <summary>
+            Removes a user from all channels.
+            </summary>
+            <param name="userId">The user ID.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IChannelService.ClearChannel(System.String)">
+            <summary>
+            Clears all users from a specific channel.
+            </summary>
+            <param name="channelId">The ID of the channel.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IChannelService.GetChannels(System.String)">
+            <summary>
+            Gets all channels a user is a member of.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <returns>A collection of channel IDs that the user is a member of.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.ChannelService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IChannelService"/> to manage channels and user memberships.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Services.ChannelService.channelIdWithChannelDict">
+            <summary>
+            Gets a dictionary that maps channel IDs to their corresponding <see cref="T:XmobiTea.ProtonNet.Server.Models.IChannel"/> instances.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Services.ChannelService.userIdWithChannelsDict">
+            <summary>
+            Gets a dictionary that maps user IDs to lists of <see cref="T:XmobiTea.ProtonNet.Server.Models.IChannel"/> instances they are associated with.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.ChannelService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.GetUserIdsInChannel(System.String)">
+            <summary>
+            Gets the user IDs in a specific channel.
+            </summary>
+            <param name="channelId">The ID of the channel.</param>
+            <returns>A collection of user IDs in the specified channel.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.InChannel(System.String,System.String)">
+            <summary>
+            Checks if a user is in a specific channel.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="channelId">The ID of the channel.</param>
+            <returns><c>true</c> if the user is in the channel; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.JoinChannel(System.String,System.String)">
+            <summary>
+            Adds a user to a specific channel.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="channelId">The ID of the channel.</param>
+            <returns><c>true</c> if the user joined the channel successfully; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.LeaveChannel(System.String,System.String)">
+            <summary>
+            Removes a user from a specific channel.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <param name="channelId">The ID of the channel.</param>
+            <returns><c>true</c> if the user left the channel successfully; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.LeaveAllChannel(System.String)">
+            <summary>
+            Removes a user from all channels.
+            </summary>
+            <param name="userId">The user ID.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.ClearChannel(System.String)">
+            <summary>
+            Clears all users from a specific channel.
+            </summary>
+            <param name="channelId">The ID of the channel.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ChannelService.GetChannels(System.String)">
+            <summary>
+            Gets all channels a user is a member of.
+            </summary>
+            <param name="userId">The user ID.</param>
+            <returns>A collection of channel IDs that the user is a member of.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IEventService">
+            <summary>
+            Defines methods for managing and handling events.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IEventService.GetHandler(System.String)">
+            <summary>
+            Gets the event handler for a specific event code.
+            </summary>
+            <param name="eventCode">The code of the event.</param>
+            <returns>The event handler associated with the specified event code.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IEventService.Handle(XmobiTea.ProtonNet.Networking.OperationEvent,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles an operation event with the provided parameters.
+            </summary>
+            <param name="operationEvent">The operation event to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer involved in the event.</param>
+            <param name="session">The session in which the event occurred.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.EventService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IEventService"/> to manage and handle events.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.EventService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.EventService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.EventService.AddHandler(XmobiTea.ProtonNet.Server.Handlers.IEventHandler,System.Boolean,System.Boolean)">
+            <summary>
+            Adds an event handler to the service.
+            </summary>
+            <param name="eventHandler">The event handler to add.</param>
+            <param name="allowAnonymous">Indicates whether anonymous is allowed for this event.</param>
+            <param name="onlyServer">Indicates whether the event is only for server-side handling.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.EventService.RemoveHandler(System.String)">
+            <summary>
+            Removes an event handler from the service.
+            </summary>
+            <param name="eventCode">The code of the event handler to remove.</param>
+            <returns><c>true</c> if the handler was removed; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.EventService.GetHandler(System.String)">
+            <summary>
+            Gets the event handler for a specific event code.
+            </summary>
+            <param name="eventCode">The code of the event.</param>
+            <returns>The event handler associated with the specified event code.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.EventService.Handle(XmobiTea.ProtonNet.Networking.OperationEvent,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles an operation event with the provided parameters.
+            </summary>
+            <param name="operationEvent">The operation event to handle.</param>
+            <param name="sendParameters">Parameters for sending data.</param>
+            <param name="userPeer">The user peer involved in the event.</param>
+            <param name="session">The session in which the event occurred.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IInitRequestProviderService">
+            <summary>
+            Defines a service for creating new session initialization requests.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IInitRequestProviderService.NewSessionInitRequest">
+            <summary>
+            Creates a new session initialization request.
+            </summary>
+            <returns>A new instance of <see cref="T:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest"/>.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IInitRequestProviderService"/> to provide new session initialization requests.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.SessionIdLength">
+            <summary>
+            Defines the fixed length for session IDs. This is a constant value of 16.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.sessionIdProvider">
+            <summary>
+            Gets the provider responsible for generating and managing session IDs.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.connectionIdProvider">
+            <summary>
+            Gets the provider responsible for generating and managing connection IDs.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.fiberProvider">
+            <summary>
+            Gets the provider responsible for managing fibers, which are lightweight units of execution.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.NewSessionInitRequest">
+            <summary>
+            Creates a new session initialization request.
+            </summary>
+            <returns>A new instance of <see cref="T:XmobiTea.ProtonNet.Server.Models.ISessionInitRequest"/>.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.SessionIdProvider">
+            <summary>
+            Provides functionality to generate session IDs.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.SessionIdProvider.GenerateRandomSessionId">
+            <summary>
+            Generates a random session ID.
+            </summary>
+            <returns>A random session ID.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.ConnectionIdProvider">
+            <summary>
+            Provides functionality to generate connection IDs.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.ConnectionIdProvider.GetNextConnectionId">
+            <summary>
+            Gets the next connection ID.
+            </summary>
+            <returns>The next connection ID.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.FiberProvider">
+            <summary>
+            Provides functionality to create new fibers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.InitRequestProviderService.FiberProvider.CreateNewFiber">
+            <summary>
+            Creates and starts a new fiber.
+            </summary>
+            <returns>A new instance of <see cref="T:XmobiTea.Threading.IFiber"/>.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IRequestService">
+            <summary>
+            Defines a service for handling requests.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IRequestService.GetHandler(System.String)">
+            <summary>
+            Retrieves the request handler associated with the specified operation code.
+            </summary>
+            <param name="operationCode">The code representing the operation.</param>
+            <returns>The request handler for the specified operation code.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IRequestService.Handle(XmobiTea.ProtonNet.Networking.OperationRequest,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the specified operation request asynchronously.
+            </summary>
+            <param name="operationRequest">The operation request to handle.</param>
+            <param name="sendParameters">The parameters for sending data.</param>
+            <param name="userPeer">The user peer initiating the request.</param>
+            <param name="session">The session associated with the request.</param>
+            <returns>A task representing the asynchronous operation, with a result of type <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/>.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.RequestService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IRequestService"/> to handle requests.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RequestService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.RequestService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RequestService.AddHandler(XmobiTea.ProtonNet.Server.Handlers.IRequestHandler,System.Boolean,System.Boolean)">
+            <summary>
+            Adds a new request handler to the service.
+            </summary>
+            <param name="requestHandler">The request handler to add.</param>
+            <param name="allowAnonymous">Specifies whether anonymous is allowed for this handler.</param>
+            <param name="onlyServer">Specifies whether this handler is only for server-side requests.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RequestService.RemoveHandler(System.String)">
+            <summary>
+            Removes the request handler associated with the specified operation code.
+            </summary>
+            <param name="operationCode">The code representing the operation.</param>
+            <returns>True if the handler was removed; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RequestService.GetHandler(System.String)">
+            <summary>
+            Retrieves the request handler associated with the specified operation code.
+            </summary>
+            <param name="operationCode">The code representing the operation.</param>
+            <returns>The request handler for the specified operation code.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RequestService.Handle(XmobiTea.ProtonNet.Networking.OperationRequest,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.Server.Models.IUserPeer,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Handles the specified operation request asynchronously.
+            </summary>
+            <param name="operationRequest">The operation request to handle.</param>
+            <param name="sendParameters">The parameters for sending data.</param>
+            <param name="userPeer">The user peer initiating the request.</param>
+            <param name="session">The session associated with the request.</param>
+            <returns>A task representing the asynchronous operation, with a result of type <see cref="T:XmobiTea.ProtonNet.Networking.OperationResponse"/>.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IRpcProtocolService">
+            <summary>
+            Defines the service for handling RPC protocol operations.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IRpcProtocolService.Write(System.IO.Stream,XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.Networking.IOperationModel,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType)">
+            <summary>
+            Writes an operation model to the specified stream.
+            </summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="operationModel">The operation model to write.</param>
+            <param name="sendParameters">The parameters for sending data.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IRpcProtocolService.WriteEncrypt(System.IO.Stream,XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.Networking.IOperationModel,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType,XmobiTea.ProtonNet.RpcProtocol.Types.CryptoProviderType,System.Byte[])">
+            <summary>
+            Writes an encrypted operation model to the specified stream.
+            </summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="operationModel">The operation model to write.</param>
+            <param name="sendParameters">The parameters for sending data.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+            <param name="cryptoProviderType">The crypto provider type.</param>
+            <param name="encryptKey">The key used for encryption.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IRpcProtocolService.TryRead(System.IO.Stream,XmobiTea.ProtonNet.RpcProtocol.Models.OperationHeader@,System.Byte[]@)">
+            <summary>
+            Attempts to read an operation header and payload from the specified stream.
+            </summary>
+            <param name="stream">The stream to read from.</param>
+            <param name="header">The operation header.</param>
+            <param name="payload">The payload data.</param>
+            <returns>True if the read operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IRpcProtocolService.TryDeserializeOperationModel(System.Byte[],XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType,XmobiTea.ProtonNet.Networking.IOperationModel@)">
+            <summary>
+            Attempts to deserialize an operation model from the specified payload.
+            </summary>
+            <param name="payload">The payload data.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+            <param name="operationModel">The deserialized operation model.</param>
+            <returns>True if deserialization was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IRpcProtocolService.TryDeserializeEncryptOperationModel(System.Byte[],XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType,XmobiTea.ProtonNet.RpcProtocol.Types.CryptoProviderType,System.Byte[],XmobiTea.ProtonNet.Networking.IOperationModel@)">
+            <summary>
+            Attempts to deserialize an encrypted operation model from the specified payload.
+            </summary>
+            <param name="payload">The payload data.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+            <param name="cryptoProviderType">The crypto provider type.</param>
+            <param name="encryptKey">The key used for decryption.</param>
+            <param name="operationModel">The deserialized operation model.</param>
+            <returns>True if deserialization was successful; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.RpcProtocolService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IRpcProtocolService"/> to handle RPC protocol operations.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RpcProtocolService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.RpcProtocolService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RpcProtocolService.TryDeserializeEncryptOperationModel(System.Byte[],XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType,XmobiTea.ProtonNet.RpcProtocol.Types.CryptoProviderType,System.Byte[],XmobiTea.ProtonNet.Networking.IOperationModel@)">
+            <summary>
+            Attempts to deserialize an encrypted operation model from the specified payload.
+            </summary>
+            <param name="payload">The payload data.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+            <param name="cryptoProviderType">The crypto provider type.</param>
+            <param name="encryptKey">The key used for decryption.</param>
+            <param name="operationModel">The deserialized operation model.</param>
+            <returns>True if deserialization was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RpcProtocolService.TryDeserializeOperationModel(System.Byte[],XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType,XmobiTea.ProtonNet.Networking.IOperationModel@)">
+            <summary>
+            Attempts to deserialize an operation model from the specified payload.
+            </summary>
+            <param name="payload">The payload data.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+            <param name="operationModel">The deserialized operation model.</param>
+            <returns>True if deserialization was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RpcProtocolService.TryRead(System.IO.Stream,XmobiTea.ProtonNet.RpcProtocol.Models.OperationHeader@,System.Byte[]@)">
+            <summary>
+            Attempts to read an operation header and payload from the specified stream.
+            </summary>
+            <param name="stream">The stream to read from.</param>
+            <param name="header">The operation header.</param>
+            <param name="payload">The payload data.</param>
+            <returns>True if the read operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RpcProtocolService.Write(System.IO.Stream,XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.Networking.IOperationModel,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType)">
+            <summary>
+            Writes an operation model to the specified stream.
+            </summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="operationModel">The operation model to write.</param>
+            <param name="sendParameters">The parameters for sending data.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.RpcProtocolService.WriteEncrypt(System.IO.Stream,XmobiTea.ProtonNet.RpcProtocol.Types.OperationType,XmobiTea.ProtonNet.Networking.IOperationModel,XmobiTea.ProtonNet.Networking.SendParameters,XmobiTea.ProtonNet.RpcProtocol.Types.ProtocolProviderType,XmobiTea.ProtonNet.RpcProtocol.Types.CryptoProviderType,System.Byte[])">
+            <summary>
+            Writes an encrypted operation model to the specified stream.
+            </summary>
+            <param name="stream">The stream to write to.</param>
+            <param name="operationType">The type of the operation.</param>
+            <param name="operationModel">The operation model to write.</param>
+            <param name="sendParameters">The parameters for sending data.</param>
+            <param name="protocolProviderType">The protocol provider type.</param>
+            <param name="cryptoProviderType">The crypto provider type.</param>
+            <param name="encryptKey">The key used for encryption.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.ISessionService">
+            <summary>
+            Defines the service for managing sessions.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ISessionService.GetSessionCount">
+            <summary>
+            Gets the total number of sessions.
+            </summary>
+            <returns>The number of sessions.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ISessionService.GetSessionCount(System.String)">
+            <summary>
+            Gets the number of sessions associated with the specified session ID.
+            </summary>
+            <param name="sessionId">The session ID.</param>
+            <returns>The number of sessions for the given session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ISessionService.MapSession(System.String,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Maps a session to a session ID.
+            </summary>
+            <param name="sessionId">The session ID.</param>
+            <param name="session">The session to map.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ISessionService.RemoveSession(XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Removes a session.
+            </summary>
+            <param name="session">The session to remove.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ISessionService.GetSessions">
+            <summary>
+            Gets all sessions.
+            </summary>
+            <returns>An enumerable collection of all sessions.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.ISessionService.GetSessions(System.String)">
+            <summary>
+            Gets all sessions associated with the specified session ID.
+            </summary>
+            <param name="sessionId">The session ID.</param>
+            <returns>An enumerable collection of sessions for the given session ID.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.SessionService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.ISessionService"/> to manage sessions.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.SessionService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.SessionService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.SessionService.MapSession(System.String,XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Maps a session to a session ID.
+            </summary>
+            <param name="sessionId">The session ID.</param>
+            <param name="session">The session to map.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.SessionService.GetSessionCount">
+            <summary>
+            Gets the total number of sessions.
+            </summary>
+            <returns>The number of sessions.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.SessionService.GetSessionCount(System.String)">
+            <summary>
+            Gets the number of sessions associated with the specified session ID.
+            </summary>
+            <param name="sessionId">The session ID.</param>
+            <returns>The number of sessions for the given session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.SessionService.GetSessions">
+            <summary>
+            Gets all sessions.
+            </summary>
+            <returns>An enumerable collection of all sessions.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.SessionService.GetSessions(System.String)">
+            <summary>
+            Gets all sessions associated with the specified session ID.
+            </summary>
+            <param name="sessionId">The session ID.</param>
+            <returns>An enumerable collection of sessions for the given session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.SessionService.RemoveSession(XmobiTea.ProtonNet.Server.Models.ISession)">
+            <summary>
+            Removes a session.
+            </summary>
+            <param name="session">The session to remove.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IUserPeerAuthTokenService">
+            <summary>
+            Defines the service for generating and verifying authentication tokens for user peers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerAuthTokenService.GenerateToken(XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload,XmobiTea.ProtonNet.Token.TokenOptions)">
+            <summary>
+            Generates an authentication token for a user peer.
+            </summary>
+            <param name="payload">The payload to encode in the token.</param>
+            <param name="options">Optional token options.</param>
+            <returns>The generated token.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerAuthTokenService.TryVerifyToken(System.String,XmobiTea.ProtonNet.Token.Models.ITokenHeader@,XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload@)">
+            <summary>
+            Verifies the authenticity of a token.
+            </summary>
+            <param name="token">The token to verify.</param>
+            <param name="header">The token header if verification is successful.</param>
+            <param name="userPeerTokenPayload">The payload decoded from the token if verification is successful.</param>
+            <returns>True if the token is valid; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.UserPeerAuthTokenService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IUserPeerAuthTokenService"/> to handle authentication token generation and verification.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerAuthTokenService.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.UserPeerAuthTokenService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerAuthTokenService.CreateAuthToken">
+            <summary>
+            Creates an instance of <see cref="T:XmobiTea.ProtonNet.Token.IAuthToken"/> with configured binary converters.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.ProtonNet.Token.IAuthToken"/>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerAuthTokenService.GenerateToken(XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload,XmobiTea.ProtonNet.Token.TokenOptions)">
+            <summary>
+            Generates an authentication token for a user peer.
+            </summary>
+            <param name="payload">The payload to encode in the token.</param>
+            <param name="options">Optional token options.</param>
+            <returns>The generated token.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerAuthTokenService.TryVerifyToken(System.String,XmobiTea.ProtonNet.Token.Models.ITokenHeader@,XmobiTea.ProtonNet.Server.Models.UserPeerTokenPayload@)">
+            <summary>
+            Verifies the authenticity of a token.
+            </summary>
+            <param name="token">The token to verify.</param>
+            <param name="header">The token header if verification is successful.</param>
+            <param name="userPeerTokenPayload">The payload decoded from the token if verification is successful.</param>
+            <returns>True if the token is valid; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IUserPeerService">
+            <summary>
+            Defines the service for managing user peers in the system.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.Count">
+            <summary>
+            Gets the count of user peers.
+            </summary>
+            <returns>The number of user peers.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.MapUserPeer(System.String,XmobiTea.ProtonNet.Server.Models.IUserPeer)">
+            <summary>
+            Maps a user ID to a user peer.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <param name="userPeer">The user peer to associate with the user ID.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.RemoveUserPeer(System.String)">
+            <summary>
+            Removes the user peer associated with a user ID.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.GetUserPeer(System.String)">
+            <summary>
+            Gets the user peer associated with a user ID.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <returns>The user peer associated with the user ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.GetUserPeer(System.Predicate{XmobiTea.ProtonNet.Server.Models.IUserPeer})">
+            <summary>
+            Gets the user peer that matches a specified predicate.
+            </summary>
+            <param name="match">The predicate to match against user peers.</param>
+            <returns>The user peer that matches the predicate.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.GetUserIds">
+            <summary>
+            Gets all user IDs.
+            </summary>
+            <returns>A collection of all user IDs.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.GetUserPeers">
+            <summary>
+            Gets all user peers.
+            </summary>
+            <returns>A collection of all user peers.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.GetUserPeers(System.Predicate{XmobiTea.ProtonNet.Server.Models.IUserPeer})">
+            <summary>
+            Gets user peers that match a specified predicate.
+            </summary>
+            <param name="match">The predicate to match against user peers.</param>
+            <returns>A collection of user peers that match the predicate.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerService.GetUserIds(System.Predicate{XmobiTea.ProtonNet.Server.Models.IUserPeer})">
+            <summary>
+            Gets user IDs that match a specified predicate.
+            </summary>
+            <param name="match">The predicate to match against user peers.</param>
+            <returns>A collection of user IDs that match the predicate.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.UserPeerService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IUserPeerService"/> to manage user peers.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Server.Services.UserPeerService.userIdWithUserPeerDict">
+            <summary>
+            Gets a dictionary that maps user IDs to their corresponding <see cref="T:XmobiTea.ProtonNet.Server.Models.IUserPeer"/> instances.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.UserPeerService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.Count">
+            <summary>
+            Gets the count of user peers.
+            </summary>
+            <returns>The number of user peers.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.MapUserPeer(System.String,XmobiTea.ProtonNet.Server.Models.IUserPeer)">
+            <summary>
+            Maps a user ID to a user peer.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <param name="userPeer">The user peer to associate with the user ID.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.RemoveUserPeer(System.String)">
+            <summary>
+            Removes the user peer associated with a user ID.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.GetUserPeer(System.String)">
+            <summary>
+            Gets the user peer associated with a user ID.
+            </summary>
+            <param name="userId">The ID of the user.</param>
+            <returns>The user peer associated with the user ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.GetUserPeer(System.Predicate{XmobiTea.ProtonNet.Server.Models.IUserPeer})">
+            <summary>
+            Gets the user peer that matches a specified predicate.
+            </summary>
+            <param name="match">The predicate to match against user peers.</param>
+            <returns>The user peer that matches the predicate.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.GetUserIds">
+            <summary>
+            Gets all user IDs.
+            </summary>
+            <returns>A collection of all user IDs.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.GetUserPeers">
+            <summary>
+            Gets all user peers.
+            </summary>
+            <returns>A collection of all user peers.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.GetUserPeers(System.Predicate{XmobiTea.ProtonNet.Server.Models.IUserPeer})">
+            <summary>
+            Gets user peers that match a specified predicate.
+            </summary>
+            <param name="match">The predicate to match against user peers.</param>
+            <returns>A collection of user peers that match the predicate.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerService.GetUserIds(System.Predicate{XmobiTea.ProtonNet.Server.Models.IUserPeer})">
+            <summary>
+            Gets user IDs that match a specified predicate.
+            </summary>
+            <param name="match">The predicate to match against user peers.</param>
+            <returns>A collection of user IDs that match the predicate.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.IUserPeerSessionService">
+            <summary>
+            Defines the service for managing user peers associated with session IDs.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerSessionService.GetUserPeerCount">
+            <summary>
+            Gets the count of user peers.
+            </summary>
+            <returns>The number of user peers.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerSessionService.GetUserPeer(System.String)">
+            <summary>
+            Gets the user peer associated with a session ID.
+            </summary>
+            <param name="sessionId">The session ID of the user peer.</param>
+            <returns>The user peer associated with the session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerSessionService.MapUserPeer(System.String,XmobiTea.ProtonNet.Server.Models.IUserPeer)">
+            <summary>
+            Maps a session ID to a user peer.
+            </summary>
+            <param name="sessionId">The session ID to map.</param>
+            <param name="userPeer">The user peer to associate with the session ID.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerSessionService.RemoveUserPeer(System.String)">
+            <summary>
+            Removes the user peer associated with a session ID.
+            </summary>
+            <param name="sessionId">The session ID of the user peer to remove.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.IUserPeerSessionService.GetUserPeers">
+            <summary>
+            Gets all user peers.
+            </summary>
+            <returns>A collection of all user peers.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService">
+            <summary>
+            Implements <see cref="T:XmobiTea.ProtonNet.Server.Services.IUserPeerSessionService"/> to manage user peers associated with session IDs.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService.GetUserPeerCount">
+            <summary>
+            Gets the count of user peers.
+            </summary>
+            <returns>The number of user peers.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService.GetUserPeer(System.String)">
+            <summary>
+            Gets the user peer associated with a session ID.
+            </summary>
+            <param name="sessionId">The session ID of the user peer.</param>
+            <returns>The user peer associated with the session ID.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService.MapUserPeer(System.String,XmobiTea.ProtonNet.Server.Models.IUserPeer)">
+            <summary>
+            Maps a session ID to a user peer.
+            </summary>
+            <param name="sessionId">The session ID to map.</param>
+            <param name="userPeer">The user peer to associate with the session ID.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService.RemoveUserPeer(System.String)">
+            <summary>
+            Removes the user peer associated with a session ID.
+            </summary>
+            <param name="sessionId">The session ID of the user peer to remove.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Server.Services.UserPeerSessionService.GetUserPeers">
+            <summary>
+            Gets all user peers.
+            </summary>
+            <returns>A collection of all user peers.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Server.Types.PeerType">
+            <summary>
+            Represents the type of peer in the system.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Server.Types.PeerType.Unknown">
+            <summary>
+            Indicates an unknown peer type.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Server.Types.PeerType.WebApiClient">
+            <summary>
+            Represents a client that uses Web API.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Server.Types.PeerType.SocketClient">
+            <summary>
+            Represents a client that uses sockets.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Server.Types.PeerType.WebApiServer">
+            <summary>
+            Represents a server that uses Web API.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Server.Types.PeerType.SocketServer">
+            <summary>
+            Represents a server that uses sockets.
+            </summary>
+        </member>
+    </members>
+</doc>

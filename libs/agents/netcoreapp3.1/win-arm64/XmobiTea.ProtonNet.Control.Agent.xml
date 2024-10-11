@@ -1,0 +1,645 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmobiTea.ProtonNet.Control.Agent</name>
+    </assembly>
+    <members>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Agents.IStartupAgent">
+            <summary>
+            Interface defining the methods for a startup agent.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.IStartupAgent.Start">
+            <summary>
+            Starts the agent.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.IStartupAgent.Stop">
+            <summary>
+            Stops the agent.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent">
+            <summary>
+            Implementation of IStartupAgent for managing the startup of different types of servers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.CreateLookupBinPaths(XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo)">
+            <summary>
+            Creates paths for looking up assemblies.
+            </summary>
+            <param name="startupAgentInfo">Information used to create lookup paths.</param>
+            <returns>An array of paths used for assembly lookup.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.Start">
+            <summary>
+            Starts the agent by setting up event handlers and loading the server.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.LoadAndStartServer">
+            <summary>
+            Loads the server assembly and starts the server based on the configuration.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.StartWebApiServer">
+            <summary>
+            Starts the Web API server.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.LoadWebApiServerStartupSettings">
+            <summary>
+            Loads the startup settings for the Web API server.
+            </summary>
+            <returns>The startup settings for the Web API server.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.GenerateStartupSettingsFrom(XmobiTea.ProtonNet.Control.Helper.Models.WebApiStartupSettings)">
+            <summary>
+            Generates Web API server startup settings from the provided configuration.
+            </summary>
+            <param name="webApiStartupSettings">Configuration for the Web API server.</param>
+            <returns>The generated startup settings for the Web API server.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.StartSocketServer">
+            <summary>
+            Starts the Socket server.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.LoadSocketServerStartupSettings">
+            <summary>
+            Loads the startup settings for the Socket server.
+            </summary>
+            <returns>The startup settings for the Socket server.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.GenerateStartupSettingsFrom(XmobiTea.ProtonNet.Control.Helper.Models.SocketStartupSettings)">
+            <summary>
+            Generates Socket server startup settings from the provided configuration.
+            </summary>
+            <param name="socketStartupSettings">Configuration for the Socket server.</param>
+            <returns>The generated startup settings for the Socket server.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.UnhandledExceptionHandlerLogException(System.Object,System.UnhandledExceptionEventArgs)">
+            <summary>
+            Handles unhandled exceptions by logging the error.
+            </summary>
+            <param name="sender">The source of the unhandled exception.</param>
+            <param name="e">The exception details.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.AssemblyLoadHandler(System.Object,System.AssemblyLoadEventArgs)">
+            <summary>
+            Handles the event when an assembly is loaded.
+            </summary>
+            <param name="sender">The source of the assembly load event.</param>
+            <param name="args">Details of the assembly load event.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.AssemblyResolveHandler(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Handles the event when an assembly is resolved.
+            </summary>
+            <param name="sender">The source of the assembly resolve event.</param>
+            <param name="args">Details of the assembly resolve event.</param>
+            <returns>The resolved assembly, or null if not resolved.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.TypeResolveHandler(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Handles the event when a type is resolved.
+            </summary>
+            <param name="sender">The source of the type resolve event.</param>
+            <param name="args">Details of the type resolve event.</param>
+            <returns>The resolved type, or null if not resolved.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.ResourceResolveHandler(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Handles the event when a resource is resolved.
+            </summary>
+            <param name="sender">The source of the resource resolve event.</param>
+            <param name="args">Details of the resource resolve event.</param>
+            <returns>The resolved resource, or null if not resolved.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.ReflectionOnlyAssemblyResolveHandler(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Handles the event when a reflection-only assembly is resolved.
+            </summary>
+            <param name="sender">The source of the reflection-only assembly resolve event.</param>
+            <param name="args">Details of the reflection-only assembly resolve event.</param>
+            <returns>The resolved assembly, or null if not resolved.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.DomainUnloadHandler(System.Object,System.EventArgs)">
+            <summary>
+            Handles the event when the application domain is unloaded.
+            </summary>
+            <param name="sender">The source of the domain unload event.</param>
+            <param name="e">Details of the domain unload event.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.Stop">
+            <summary>
+            Stops the server based on the server type.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.NewBuilder">
+            <summary>
+            Creates a new Builder instance.
+            </summary>
+            <returns>A new Builder instance.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.Builder">
+            <summary>
+            Builder class for creating instances of PlainStartupAgent.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.Builder.SetStartupAgentInformation(XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo)">
+            <summary>
+            Sets the startup agent information for the builder.
+            </summary>
+            <param name="startupAgentInfo">The startup agent information to set.</param>
+            <returns>The updated Builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.PlainStartupAgent.Builder.Build">
+            <summary>
+            Builds a new instance of PlainStartupAgent using the builder configuration.
+            </summary>
+            <returns>A new instance of PlainStartupAgent.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent">
+            <summary>
+            Background service implementation for starting and stopping a worker service with a specific startup agent.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.Start">
+            <summary>
+            Starts the worker service agent.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.Stop">
+            <summary>
+            Stops the worker service agent.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously starts the background service.
+            </summary>
+            <param name="cancellationToken">Token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously stops the background service.
+            </summary>
+            <param name="cancellationToken">Token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>
+            Executes the background service logic asynchronously.
+            </summary>
+            <param name="stoppingToken">Token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.NewBuilder">
+            <summary>
+            Creates a new Builder instance for configuring WorkerServiceStartupAgent.
+            </summary>
+            <returns>A new Builder instance.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.Builder">
+            <summary>
+            Builder class for creating instances of WorkerServiceStartupAgent.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.Builder.SetStartupAgentInfo(XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo)">
+            <summary>
+            Sets the startup agent information for the builder.
+            </summary>
+            <param name="startupAgentInfo">The startup agent information to set.</param>
+            <returns>The updated Builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Agents.WorkerServiceStartupAgent.Builder.Build">
+            <summary>
+            Builds a new instance of WorkerServiceStartupAgent using the builder configuration.
+            </summary>
+            <returns>A new instance of WorkerServiceStartupAgent.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup">
+            <summary>
+            Handles the startup of the application, including configuration and agent creation.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.AgentType">
+            <summary>
+            Gets the type of agent to be used.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.StartupAgentInfo">
+            <summary>
+            Gets the startup agent information.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.IsBackgroundService">
+            <summary>
+            Gets a value indicating whether the agent is a background service.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.#ctor(XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup"/> class.
+            </summary>
+            <param name="builder">The builder used to initialize the application startup.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.NewStartupAgent">
+            <summary>
+            Creates a new startup agent based on the configuration.
+            </summary>
+            <returns>The newly created startup agent.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.CreateStartupAgent(XmobiTea.ProtonNet.Control.Agent.Types.AgentType,XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo)">
+            <summary>
+            Creates a startup agent based on the agent type.
+            </summary>
+            <param name="agentType">The type of agent to create.</param>
+            <param name="startupAgentInfo">The startup agent information.</param>
+            <returns>The newly created startup agent.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.SetupLog(XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo)">
+            <summary>
+            Sets up the logging configuration based on the startup agent information.
+            </summary>
+            <param name="startupAgentInfo">The startup agent information.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.NewBuilder">
+            <summary>
+            Creates a new builder for <see cref="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup"/>.
+            </summary>
+            <returns>A new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder"/> class.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder">
+            <summary>
+            Builder class for <see cref="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup"/> with fluent API.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.AgentType">
+            <summary>
+            Gets or sets the type of agent to be used.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.StartupAgentInfo">
+            <summary>
+            Gets or sets the startup agent information.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.IsBackgroundService">
+            <summary>
+            Gets or sets a value indicating whether the agent is a background service.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.SetAgentType(XmobiTea.ProtonNet.Control.Agent.Types.AgentType)">
+            <summary>
+            Sets the type of agent to be used.
+            </summary>
+            <param name="agentType">The type of agent.</param>
+            <returns>The current instance of the builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.SetStartupAgentInfo(XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo)">
+            <summary>
+            Sets the startup agent information.
+            </summary>
+            <param name="startupAgentInfo">The startup agent information.</param>
+            <returns>The current instance of the builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.SetArgs(System.String[])">
+            <summary>
+            Parses command-line arguments to configure the builder.
+            </summary>
+            <param name="args">Command-line arguments.</param>
+            <returns>The current instance of the builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.GetAgentType(System.String[])">
+            <summary>
+            Retrieves the agent type from command-line arguments.
+            </summary>
+            <param name="args">Command-line arguments.</param>
+            <returns>The type of agent.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.GetStartupAgentInfo(System.String[])">
+            <summary>
+            Retrieves the startup agent information from command-line arguments.
+            </summary>
+            <param name="args">Command-line arguments.</param>
+            <returns>The startup agent information.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.GetIsBackgroundService(System.String[])">
+            <summary>
+            Retrieves whether the agent is a background service from command-line arguments.
+            </summary>
+            <param name="args">Command-line arguments.</param>
+            <returns><c>true</c> if the agent is a background service; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup.Builder.Build">
+            <summary>
+            Builds an instance of <see cref="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup"/> using the current configuration.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.ProtonNet.Control.Agent.ApplicationStartup"/>.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Helper.ArgsUtils">
+            <summary>
+            Utility class for handling command-line arguments.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Helper.ArgsUtils.GetArgValue(System.String[],System.String[])">
+            <summary>
+            Retrieves the value of a specified argument from the array of arguments.
+            </summary>
+            <param name="args">
+            The array of command-line arguments.
+            </param>
+            <param name="names">
+            The names of the arguments whose values are to be retrieved.
+            </param>
+            <returns>
+            The value of the argument if found; otherwise, null.
+            </returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Program">
+            <summary>
+            Entry point for the application.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.Program.Main(System.String[])">
+            <summary>
+            Main entry method for the application.
+            </summary>
+            <param name="args">Command-line arguments passed to the application.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder">
+            <summary>
+            Builds arguments for starting an agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.StartupAgentInfo">
+            <summary>
+            Gets or sets the startup agent information.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.AgentType">
+            <summary>
+            Gets or sets the type of the agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.IsBackgroundService">
+            <summary>
+            Gets or sets a value indicating whether the agent is a background service.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.SetStartupAgentInfo(XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo)">
+            <summary>
+            Sets the startup agent information.
+            </summary>
+            <param name="startupAgentInfo">The startup agent information.</param>
+            <returns>The current instance of the builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.SetAgentType(XmobiTea.ProtonNet.Control.Agent.Types.AgentType)">
+            <summary>
+            Sets the type of the agent.
+            </summary>
+            <param name="agentType">The type of the agent.</param>
+            <returns>The current instance of the builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.SetIsBackgroundService(System.Boolean)">
+            <summary>
+            Sets whether the agent is a background service.
+            </summary>
+            <param name="isBackgroundService">A value indicating whether the agent is a background service.</param>
+            <returns>The current instance of the builder.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.NewBuilder">
+            <summary>
+            Creates a new builder for <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder"/>.
+            </summary>
+            <returns>A new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder"/> class.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentArgsBuilder.Build">
+            <summary>
+            Builds the arguments for starting the agent.
+            </summary>
+            <returns>An array of arguments as strings.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo">
+            <summary>
+            Represents the startup agent information.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Name">
+            <summary>
+            Gets the name of the agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.BinPath">
+            <summary>
+            Gets the path to the binary file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.ProtonBinPath">
+            <summary>
+            Gets the path to the Proton binary file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.LogPath">
+            <summary>
+            Gets the path to the log file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.AssemblyName">
+            <summary>
+            Gets the name of the assembly.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.StartupSettingsFilePath">
+            <summary>
+            Gets the path to the startup settings file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Log4netFilePath">
+            <summary>
+            Gets the path to the Log4net configuration file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.ServerType">
+            <summary>
+            Gets the type of server.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.#ctor(XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo"/> class using the specified builder.
+            </summary>
+            <param name="builder">The builder used to create the instance.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.NewBuider">
+            <summary>
+            Creates a new builder for the <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo"/> class.
+            </summary>
+            <returns>A new instance of the builder.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder">
+            <summary>
+            Builder class for creating instances of <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo"/>.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.Name">
+            <summary>
+            Gets or sets the name of the agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.BinPath">
+            <summary>
+            Gets or sets the path to the binary file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.ProtonBinPath">
+            <summary>
+            Gets or sets the path to the Proton binary file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.LogPath">
+            <summary>
+            Gets or sets the path to the log file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.AssemblyName">
+            <summary>
+            Gets or sets the name of the assembly.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.StartupSettingsFilePath">
+            <summary>
+            Gets or sets the path to the startup settings file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.Log4netFilePath">
+            <summary>
+            Gets or sets the path to the Log4net configuration file.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.ServerType">
+            <summary>
+            Gets or sets the type of server.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetName(System.String)">
+            <summary>
+            Sets the name of the agent.
+            </summary>
+            <param name="name">The name of the agent.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetBinPath(System.String)">
+            <summary>
+            Sets the path to the binary file.
+            </summary>
+            <param name="binPath">The path to the binary file.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetProtonBinPath(System.String)">
+            <summary>
+            Sets the path to the Proton binary file.
+            </summary>
+            <param name="protonBinPath">The path to the Proton binary file.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetLogPath(System.String)">
+            <summary>
+            Sets the path to the log file.
+            </summary>
+            <param name="logPath">The path to the log file.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetAssemblyName(System.String)">
+            <summary>
+            Sets the name of the assembly.
+            </summary>
+            <param name="assemblyName">The name of the assembly.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetStartupSettingsFilePath(System.String)">
+            <summary>
+            Sets the path to the startup settings file.
+            </summary>
+            <param name="startupSettingsFilePath">The path to the startup settings file.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetLog4netFilePath(System.String)">
+            <summary>
+            Sets the path to the Log4net configuration file.
+            </summary>
+            <param name="log4netFilePath">The path to the Log4net configuration file.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.SetServerType(XmobiTea.ProtonNet.Control.Agent.Types.ServerType)">
+            <summary>
+            Sets the type of server.
+            </summary>
+            <param name="serverType">The type of server.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo.Builder.Build">
+            <summary>
+            Builds a new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo"/> class.
+            </summary>
+            <returns>A new instance of the <see cref="T:XmobiTea.ProtonNet.Control.Agent.StartupAgentInfo"/> class.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.StaticProperty">
+            <summary>
+            Provides static properties for the agent.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Control.Agent.StaticProperty.StartupAgentInfo">
+            <summary>
+            Gets or sets the information related to the startup agent.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Types.AgentType">
+            <summary>
+            Enumeration for different types of agents.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Agent.Types.AgentType.Service">
+            <summary>
+            Represents a service agent.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Agent.Types.AgentType.Plain">
+            <summary>
+            Represents a plain agent.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Control.Agent.Types.ServerType">
+            <summary>
+            Enumeration for different server types.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Agent.Types.ServerType.WebApi">
+            <summary>
+            Represents a Web API server.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Control.Agent.Types.ServerType.Socket">
+            <summary>
+            Represents a Socket server.
+            </summary>
+        </member>
+    </members>
+</doc>
