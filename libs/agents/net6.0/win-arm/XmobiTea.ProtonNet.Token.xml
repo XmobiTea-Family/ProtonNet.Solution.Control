@@ -1,0 +1,812 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmobiTea.ProtonNet.Token</name>
+    </assembly>
+    <members>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.HMACTokenAlgorithmEncode">
+            <summary>
+            Implements the ITokenAlgorithmEncode interface using HMAC for encryption.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.HMACTokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array using HMAC.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.ITokenAlgorithmEncode">
+            <summary>
+            Defines a method for encrypting data.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.ITokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.KeyedHashAlgorithmTokenAlgorithmEncode">
+            <summary>
+            Implements the ITokenAlgorithmEncode interface using KeyedHashAlgorithm for encryption.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.KeyedHashAlgorithmTokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array using KeyedHashAlgorithm.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.MD5TokenAlgorithmEncode">
+            <summary>
+            Implements the ITokenAlgorithmEncode interface using MD5 for encryption.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.MD5TokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array using MD5.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data using MD5 hash.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.SHA1TokenAlgorithmEncode">
+            <summary>
+            Implements the ITokenAlgorithmEncode interface using SHA1 for encryption.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.SHA1TokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array using SHA1.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data using SHA1 hash.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.SHA256TokenAlgorithmEncode">
+            <summary>
+            Implements the ITokenAlgorithmEncode interface using SHA256 for encryption.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.SHA256TokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array using SHA256.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data using SHA256 hash.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.SHA384TokenAlgorithmEncode">
+            <summary>
+            Implements the ITokenAlgorithmEncode interface using SHA384 for encryption.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.SHA384TokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array using SHA384.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data using SHA384 hash.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Algorithm.SHA512TokenAlgorithmEncode">
+            <summary>
+            Implements the ITokenAlgorithmEncode interface using SHA512 for encryption.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Algorithm.SHA512TokenAlgorithmEncode.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a byte array using SHA512.
+            </summary>
+            <param name="buffer">The byte array to be encrypted.</param>
+            <returns>A byte array representing the encrypted data using SHA512 hash.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Attributes.TokenMemberAttribute">
+            <summary>
+            Specifies that a property is a member of a token and associates it with a code.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Attributes.TokenMemberAttribute.Code">
+            <summary>
+            Gets the code associated with the token member.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Attributes.TokenMemberAttribute.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the TokenMemberAttribute class.
+            </summary>
+            <param name="code">The code associated with the token member.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.AuthToken">
+            <summary>
+            Implements the IAuthToken interface for encoding, decoding, and verifying authentication tokens.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.AuthToken.Version">
+            <summary>
+            The token version.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.AuthToken.tokenBinaryFactory">
+            <summary>
+            Factory for creating token binaries.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.AuthToken.tokenSerializer">
+            <summary>
+            Serializer for encoding token headers and payloads.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.AuthToken.tokenDeserializer">
+            <summary>
+            Deserializer for decoding token headers and payloads.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.AuthToken.#ctor">
+            <summary>
+            Initializes a new instance of the AuthToken class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.AuthToken.SetBinaryConverter(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,XmobiTea.Binary.IBinaryConverter)">
+            <summary>
+            Sets the binary converter for the specified binary type.
+            </summary>
+            <param name="binaryType">The binary type.</param>
+            <param name="binaryConverter">The binary converter.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.AuthToken.Encode``1(``0,System.String,XmobiTea.ProtonNet.Token.TokenOptions)">
+            <summary>
+            Encodes the specified payload into a token.
+            </summary>
+            <typeparam name="T">The type of the payload.</typeparam>
+            <param name="payload">The payload to encode.</param>
+            <param name="key">The key used for signing the token.</param>
+            <param name="options">Optional encoding options.</param>
+            <returns>The encoded token as a string.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.AuthToken.Decode``1(System.String,XmobiTea.ProtonNet.Token.Models.ITokenHeader@,``0@)">
+            <summary>
+            Decodes the specified token into a header and payload.
+            </summary>
+            <typeparam name="T">The type of the payload.</typeparam>
+            <param name="token">The token to decode.</param>
+            <param name="header">Outputs the token header.</param>
+            <param name="payload">Outputs the token payload.</param>
+            <exception cref="T:XmobiTea.ProtonNet.Token.Exceptions.TokenStringInvalidException">Thrown if the token is invalid.</exception>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.AuthToken.Verify``1(System.String,System.String,XmobiTea.ProtonNet.Token.Models.ITokenHeader@,``0@)">
+            <summary>
+            Verifies the specified token using the provided key and outputs the header and payload.
+            </summary>
+            <typeparam name="T">The type of the payload.</typeparam>
+            <param name="token">The token to verify.</param>
+            <param name="key">The key used for verification.</param>
+            <param name="header">Outputs the verified token header.</param>
+            <param name="payload">Outputs the verified token payload.</param>
+            <exception cref="T:XmobiTea.ProtonNet.Token.Exceptions.TokenSignatureInvalidException">Thrown if the token signature is invalid.</exception>
+            <exception cref="T:XmobiTea.ProtonNet.Token.Exceptions.TokenExpiredException">Thrown if the token has expired.</exception>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.AuthToken.ReadBytes(System.IO.Stream,System.Int32)">
+            <summary>
+            Reads a specified number of bytes from a stream.
+            </summary>
+            <param name="stream">The stream to read from.</param>
+            <param name="length">The number of bytes to read.</param>
+            <returns>A byte array containing the data read from the stream.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Binary.ITokenBinaryDecode">
+            <summary>
+            Defines methods for deserializing binary data.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ITokenBinaryDecode.DeserializeHeader(System.Byte[])">
+            <summary>
+            Deserializes a byte array representing a header into an array of objects.
+            </summary>
+            <param name="header">The byte array representing the header.</param>
+            <returns>An array of objects representing the deserialized header.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ITokenBinaryDecode.DeserializePayload(System.Byte[])">
+            <summary>
+            Deserializes a byte array representing the payload into a dictionary.
+            </summary>
+            <param name="payload">The byte array representing the payload.</param>
+            <returns>A dictionary where the key is a byte and the value is an object representing the deserialized payload.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Binary.ITokenBinaryEncode">
+            <summary>
+            Defines methods for serializing data into binary format.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ITokenBinaryEncode.SerializeHeader(System.Object[])">
+            <summary>
+            Serializes an array of objects representing the header into a byte array.
+            </summary>
+            <param name="header">An array of objects representing the header.</param>
+            <returns>A byte array representing the serialized header.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ITokenBinaryEncode.SerializePayload(System.Collections.Generic.IDictionary{System.Byte,System.Object})">
+            <summary>
+            Serializes a dictionary representing the payload into a byte array.
+            </summary>
+            <param name="payload">A dictionary where the key is a byte and the value is an object representing the payload.</param>
+            <returns>A byte array representing the serialized payload.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryDecode">
+            <summary>
+            Implements the ITokenBinaryDecode interface for deserializing binary data.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryDecode.#ctor(XmobiTea.Binary.IBinaryConverter)">
+            <summary>
+            Initializes a new instance of the ProtocolTokenBinaryDecode class.
+            </summary>
+            <param name="binaryConverter">The binary converter used for deserialization.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryDecode.DeserializeHeader(System.Byte[])">
+            <summary>
+            Deserializes a byte array representing a header into an array of objects.
+            </summary>
+            <param name="header">The byte array representing the header.</param>
+            <returns>An array of objects representing the deserialized header.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryDecode.DeserializePayload(System.Byte[])">
+            <summary>
+            Deserializes a byte array representing the payload into a dictionary.
+            </summary>
+            <param name="payload">The byte array representing the payload.</param>
+            <returns>A dictionary where the key is a byte and the value is an object representing the deserialized payload.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryEncode">
+            <summary>
+            Implements the ITokenBinaryEncode interface for serializing data into binary format.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryEncode.#ctor(XmobiTea.Binary.IBinaryConverter)">
+            <summary>
+            Initializes a new instance of the ProtocolTokenBinaryEncode class.
+            </summary>
+            <param name="binaryConverter">The binary converter used for serialization.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryEncode.SerializeHeader(System.Object[])">
+            <summary>
+            Serializes an array of objects representing the header into a byte array.
+            </summary>
+            <param name="header">An array of objects representing the header.</param>
+            <returns>A byte array representing the serialized header.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Binary.ProtocolTokenBinaryEncode.SerializePayload(System.Collections.Generic.IDictionary{System.Byte,System.Object})">
+            <summary>
+            Serializes a dictionary representing the payload into a byte array.
+            </summary>
+            <param name="payload">A dictionary where the key is a byte and the value is an object representing the payload.</param>
+            <returns>A byte array representing the serialized payload.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Deserialize.ITokenDeserializer">
+            <summary>
+            Provides methods for deserializing token headers and payloads.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Deserialize.ITokenDeserializer.GenerateHeader(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,System.Byte[])">
+            <summary>
+            Generates a token header from the given binary data.
+            </summary>
+            <param name="binaryType">The binary type used for the token.</param>
+            <param name="header">The binary data representing the header.</param>
+            <returns>An instance of ITokenHeader representing the deserialized header.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Deserialize.ITokenDeserializer.GeneratePayload``1(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,System.Byte[])">
+            <summary>
+            Generates a token payload of the specified type from the given binary data.
+            </summary>
+            <typeparam name="T">The type of the payload.</typeparam>
+            <param name="binaryType">The binary type used for the token.</param>
+            <param name="payload">The binary data representing the payload.</param>
+            <returns>An instance of the specified type representing the deserialized payload.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Deserialize.TokenDeserializer">
+            <summary>
+            Implementation of ITokenDeserializer that handles the deserialization of token headers and payloads.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Deserialize.TokenDeserializer.#ctor(XmobiTea.ProtonNet.Token.Services.ITokenMemberPropertyService,XmobiTea.ProtonNet.Token.Factory.ITokenBinaryFactory)">
+            <summary>
+            Initializes a new instance of the TokenDeserializer class with the specified services.
+            </summary>
+            <param name="tokenMemberPropertyService">Service for retrieving token member properties.</param>
+            <param name="binaryFactory">Factory for creating binary encoders and decoders.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Deserialize.TokenDeserializer.GenerateHeader(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,System.Byte[])">
+            <summary>
+            Deserializes the token header using the specified binary type and header data.
+            </summary>
+            <param name="binaryType">The binary type used for the token.</param>
+            <param name="header">The binary data representing the header.</param>
+            <returns>An instance of ITokenHeader representing the deserialized header.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Deserialize.TokenDeserializer.GeneratePayload``1(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,System.Byte[])">
+            <summary>
+            Deserializes the token payload using the specified binary type and payload data.
+            </summary>
+            <typeparam name="T">The type of the payload.</typeparam>
+            <param name="binaryType">The binary type used for the token.</param>
+            <param name="payload">The binary data representing the payload.</param>
+            <returns>An instance of the specified type representing the deserialized payload.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Deserialize.TokenDeserializer.ConvertTokenHeader(System.Object[])">
+            <summary>
+            Converts an array of objects into an instance of ITokenHeader.
+            </summary>
+            <param name="headerObjs">The array of objects representing the header.</param>
+            <returns>An instance of ITokenHeader representing the header.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Deserialize.TokenDeserializer.ConvertTokenPayload(System.Collections.Generic.IDictionary{System.Byte,System.Object},System.Type)">
+            <summary>
+            Converts a dictionary of byte keys and object values into an instance of the specified payload type.
+            </summary>
+            <param name="payloadDict">The dictionary of byte keys and object values representing the payload.</param>
+            <param name="type">The type of the payload to create.</param>
+            <returns>An instance of the specified payload type.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Exceptions.TokenException">
+            <summary>
+            Represents the base class for exceptions that occur during token processing.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Exceptions.TokenExpiredException">
+            <summary>
+            Represents an exception that is thrown when a token has expired.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Exceptions.TokenSignatureInvalidException">
+            <summary>
+            Represents an exception that is thrown when a token's signature is invalid.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Exceptions.TokenStringInvalidException">
+            <summary>
+            Represents an exception that is thrown when a token string is invalid.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Factory.ITokenAlgorithmFactory">
+            <summary>
+            Provides a method to retrieve an encoder based on the TokenAlgorithmType.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.ITokenAlgorithmFactory.GetEncode(XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType)">
+            <summary>
+            Retrieves the algorithm encoder corresponding to the given TokenAlgorithmType.
+            </summary>
+            <param name="algorithmType">The type of algorithm encoding.</param>
+            <returns>An object implementing ITokenAlgorithmEncode.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Factory.TokenAlgorithmFactory">
+            <summary>
+            Factory class that provides instances of algorithm encoding based on TokenAlgorithmType.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Factory.TokenAlgorithmFactory.algorithmEncodeDict">
+            <summary>
+            A dictionary that maps TokenAlgorithmType to its respective encoder implementation.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenAlgorithmFactory.#ctor">
+            <summary>
+            Initializes a new instance of the TokenAlgorithmFactory class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenAlgorithmFactory.GetAlgorithmEncode(XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType)">
+            <summary>
+            Retrieves the encoder for the specified TokenAlgorithmType.
+            </summary>
+            <param name="algorithmType">The type of algorithm encoding.</param>
+            <returns>An object implementing ITokenAlgorithmEncode.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the specified algorithm type is not supported.</exception>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenAlgorithmFactory.GetEncode(XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType)">
+            <summary>
+            Gets the algorithm encoder for the specified TokenAlgorithmType.
+            </summary>
+            <param name="algorithmType">The type of algorithm encoding.</param>
+            <returns>An object implementing ITokenAlgorithmEncode.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Factory.ITokenBinaryFactory">
+            <summary>
+            Provides methods for obtaining binary encoding and decoding implementations 
+            based on the specified TokenBinaryType.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.ITokenBinaryFactory.GetEncode(XmobiTea.ProtonNet.Token.Types.TokenBinaryType)">
+            <summary>
+            Retrieves the binary encoder corresponding to the given TokenBinaryType.
+            </summary>
+            <param name="binaryType">The type of binary encoding.</param>
+            <returns>An object implementing ITokenBinaryEncode.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.ITokenBinaryFactory.GetDecode(XmobiTea.ProtonNet.Token.Types.TokenBinaryType)">
+            <summary>
+            Retrieves the binary decoder corresponding to the given TokenBinaryType.
+            </summary>
+            <param name="binaryType">The type of binary decoding.</param>
+            <returns>An object implementing ITokenBinaryDecode.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Factory.TokenBinaryFactory">
+            <summary>
+            Factory class that provides instances of binary encoding and decoding
+            based on TokenBinaryType.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Factory.TokenBinaryFactory.binaryPairDict">
+            <summary>
+            A dictionary that maps TokenBinaryType to its respective encoding and decoding pair.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenBinaryFactory.#ctor">
+            <summary>
+            Initializes a new instance of the TokenBinaryFactory class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenBinaryFactory.GetBinaryPair(XmobiTea.ProtonNet.Token.Types.TokenBinaryType)">
+            <summary>
+            Retrieves the encoding and decoding pair for the specified TokenBinaryType.
+            </summary>
+            <param name="binaryType">The type of binary encoding and decoding.</param>
+            <returns>A tuple containing the encoder and decoder for the binary type.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the specified binary type is not registered.</exception>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenBinaryFactory.AddBinaryConverter(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,XmobiTea.Binary.IBinaryConverter)">
+            <summary>
+            Adds a new binary converter for the specified TokenBinaryType.
+            </summary>
+            <param name="binaryType">The type of binary encoding and decoding.</param>
+            <param name="binaryConverter">The binary converter instance.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenBinaryFactory.GetEncode(XmobiTea.ProtonNet.Token.Types.TokenBinaryType)">
+            <summary>
+            Gets the binary encoder for the specified TokenBinaryType.
+            </summary>
+            <param name="binaryType">The type of binary encoding.</param>
+            <returns>An object implementing ITokenBinaryEncode.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Factory.TokenBinaryFactory.GetDecode(XmobiTea.ProtonNet.Token.Types.TokenBinaryType)">
+            <summary>
+            Gets the binary decoder for the specified TokenBinaryType.
+            </summary>
+            <param name="binaryType">The type of binary decoding.</param>
+            <returns>An object implementing ITokenBinaryDecode.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Helper.BinaryUtils">
+            <summary>
+            Provides utility methods for handling binary data and endianness.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Helper.BinaryUtils.IsBigEndian">
+            <summary>
+            Determines if the current system architecture is big-endian.
+            </summary>
+            <returns>True if the system is big-endian; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Helper.BinaryUtils.SwapIfLittleEndian(System.Byte[]@)">
+            <summary>
+            Swaps the byte order of the specified buffer if the system is little-endian.
+            </summary>
+            <param name="buffer">The byte array to swap.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Helper.MD5">
+            <summary>
+            Provides functionality to create an MD5 hash from a given input string.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Helper.MD5.CreateMD5Hash(System.String)">
+            <summary>
+            Generates an MD5 hash for the specified input string.
+            </summary>
+            <param name="input">The input string to hash.</param>
+            <returns>A hexadecimal string representing the MD5 hash.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.IAuthToken">
+            <summary>
+            Defines the methods for encoding, decoding, and verifying authentication tokens.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.IAuthToken.Encode``1(``0,System.String,XmobiTea.ProtonNet.Token.TokenOptions)">
+            <summary>
+            Encodes the specified payload into a token using the provided key and options.
+            </summary>
+            <typeparam name="T">The type of the payload, which must implement ITokenPayload.</typeparam>
+            <param name="payload">The payload to encode.</param>
+            <param name="key">The key used for encoding the token.</param>
+            <param name="options">Optional token options for customizing the encoding process.</param>
+            <returns>A string representing the encoded token.</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.IAuthToken.Decode``1(System.String,XmobiTea.ProtonNet.Token.Models.ITokenHeader@,``0@)">
+            <summary>
+            Decodes the specified token and extracts the header and payload.
+            </summary>
+            <typeparam name="T">The type of the payload, which must implement ITokenPayload.</typeparam>
+            <param name="token">The token to decode.</param>
+            <param name="header">Outputs the decoded token header.</param>
+            <param name="payload">Outputs the decoded payload.</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.IAuthToken.Verify``1(System.String,System.String,XmobiTea.ProtonNet.Token.Models.ITokenHeader@,``0@)">
+            <summary>
+            Verifies the specified token using the provided key and extracts the header and payload.
+            </summary>
+            <typeparam name="T">The type of the payload, which must implement ITokenPayload.</typeparam>
+            <param name="token">The token to verify.</param>
+            <param name="key">The key used for verifying the token.</param>
+            <param name="header">Outputs the verified token header.</param>
+            <param name="payload">Outputs the verified payload.</param>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Models.ITokenHeader">
+            <summary>
+            Represents the interface for token header information.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.ITokenHeader.Version">
+            <summary>
+            Gets the version of the token.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.ITokenHeader.BinaryType">
+            <summary>
+            Gets the type of binary encoding used for the token.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.ITokenHeader.AlgorithmType">
+            <summary>
+            Gets the type of algorithm used for signing the token.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.ITokenHeader.ExpiredAtUtcTicks">
+            <summary>
+            Gets the expiration time in UTC ticks.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Models.TokenHeader">
+            <summary>
+            Implementation of the token header interface.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.TokenHeader.Version">
+            <summary>
+            Gets or sets the version of the token.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.TokenHeader.BinaryType">
+            <summary>
+            Gets or sets the type of binary encoding used for the token.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.TokenHeader.AlgorithmType">
+            <summary>
+            Gets or sets the type of algorithm used for signing the token.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Models.TokenHeader.ExpiredAtUtcTicks">
+            <summary>
+            Gets or sets the expiration time in UTC ticks.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Models.ITokenPayload">
+            <summary>
+            Represents the interface for token payload data.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Models.TokenPayload">
+            <summary>
+            Implementation of a basic token payload.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Serialize.ITokenSerializer">
+            <summary>
+            Interface for token serialization operations
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.ITokenSerializer.GenerateHeader(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,XmobiTea.ProtonNet.Token.Models.ITokenHeader)">
+            <summary>
+            Generates the header bytes for the token
+            </summary>
+            <param name="binaryType">The type of binary encoding</param>
+            <param name="header">Token header information</param>
+            <returns>Serialized byte array of the token header</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.ITokenSerializer.GeneratePayload``1(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,``0)">
+            <summary>
+            Generates the payload bytes for the token
+            </summary>
+            <typeparam name="T">Type of the token payload</typeparam>
+            <param name="binaryType">The type of binary encoding</param>
+            <param name="payload">Token payload data</param>
+            <returns>Serialized byte array of the token payload</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.ITokenSerializer.GenerateSignature(XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType,System.Byte[],System.Byte[],System.String)">
+            <summary>
+            Generates the signature bytes for the token
+            </summary>
+            <param name="algorithmType">The type of algorithm used</param>
+            <param name="headerToken">Serialized header token bytes</param>
+            <param name="payloadToken">Serialized payload token bytes</param>
+            <param name="key">Key used for generating the signature</param>
+            <returns>Generated signature byte array</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer">
+            <summary>
+            Implementation of the token serializer interface
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.tokenMemberPropertyService">
+            <summary>
+            Service for handling token member properties
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.binaryFactory">
+            <summary>
+            Factory for binary encoding
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.algorithmFactory">
+            <summary>
+            Factory for algorithm encoding
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.#ctor(XmobiTea.ProtonNet.Token.Services.ITokenMemberPropertyService,XmobiTea.ProtonNet.Token.Factory.ITokenBinaryFactory,XmobiTea.ProtonNet.Token.Factory.ITokenAlgorithmFactory)">
+            <summary>
+            Constructor to initialize dependencies
+            </summary>
+            <param name="tokenMemberPropertyService">Token member property service</param>
+            <param name="binaryFactory">Binary encoding factory</param>
+            <param name="algorithmFactory">Algorithm encoding factory</param>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.GenerateHeader(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,XmobiTea.ProtonNet.Token.Models.ITokenHeader)">
+            <summary>
+            Generates the header bytes for the token
+            </summary>
+            <param name="binaryType">The type of binary encoding</param>
+            <param name="header">Token header information</param>
+            <returns>Serialized byte array of the token header</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.GeneratePayload``1(XmobiTea.ProtonNet.Token.Types.TokenBinaryType,``0)">
+            <summary>
+            Generates the payload bytes for the token
+            </summary>
+            <typeparam name="T">Type of the token payload</typeparam>
+            <param name="binaryType">The type of binary encoding</param>
+            <param name="payload">Token payload data</param>
+            <returns>Serialized byte array of the token payload</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.GenerateSignature(XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType,System.Byte[],System.Byte[],System.String)">
+            <summary>
+            Generates the signature bytes for the token
+            </summary>
+            <param name="algorithmType">The type of algorithm used</param>
+            <param name="headerToken">Serialized header token bytes</param>
+            <param name="payloadToken">Serialized payload token bytes</param>
+            <param name="key">Key used for generating the signature</param>
+            <returns>Generated signature byte array</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.ConvertTokenHeader(XmobiTea.ProtonNet.Token.Models.ITokenHeader)">
+            <summary>
+            Converts the token header to an array of objects
+            </summary>
+            <param name="header">Token header information</param>
+            <returns>Array of objects representing the token header</returns>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Serialize.TokenSerializer.ConvertTokenPayload(XmobiTea.ProtonNet.Token.Models.ITokenPayload)">
+            <summary>
+            Converts the token payload to a dictionary of objects
+            </summary>
+            <param name="payload">Token payload data</param>
+            <returns>Dictionary of objects representing the token payload</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Services.ITokenMemberPropertyService">
+            <summary>
+            This interface defines a service that retrieves properties for a given type.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Services.ITokenMemberPropertyService.GetProperties(System.Type)">
+            <summary>
+            Gets properties of the specified type that meet specific criteria.
+            </summary>
+            <param name="type">The type for which properties should be retrieved.</param>
+            <returns>An enumerable of PropertyInfo objects for the specified type.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Services.TokenMemberPropertyService">
+            <summary>
+            A concrete implementation of the ITokenMemberPropertyService.
+            This class caches the properties of types that have the TokenMemberAttribute applied.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.Services.TokenMemberPropertyService.tokenMemberPropertyDict">
+            <summary>
+            A thread-safe dictionary to store and cache the properties of types.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Services.TokenMemberPropertyService.#ctor">
+            <summary>
+            Initializes a new instance of the TokenMemberPropertyService class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.ProtonNet.Token.Services.TokenMemberPropertyService.GetProperties(System.Type)">
+            <summary>
+            Retrieves the properties of the specified type that are marked with the TokenMemberAttribute.
+            </summary>
+            <param name="type">The type for which to retrieve the properties.</param>
+            <returns>An enumerable of PropertyInfo objects representing the properties of the type.</returns>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.TokenOptions">
+            <summary>
+            Represents the options for configuring token generation and validation.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.TokenOptions.BinaryType">
+            <summary>
+            Gets or sets the type of binary encoding used for the token.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.TokenOptions.AlgorithmType">
+            <summary>
+            Gets or sets the algorithm type used for token creation and validation.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.ProtonNet.Token.TokenOptions.ExpiredAfterSeconds">
+            <summary>
+            Gets or sets the duration in seconds after which the token expires.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType">
+            <summary>
+            Represents the types of algorithms used for token generation and validation.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType.SHA256">
+            <summary>
+            Represents the SHA256 hashing algorithm.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType.MD5">
+            <summary>
+            Represents the MD5 hashing algorithm.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType.HMAC">
+            <summary>
+            Represents the HMAC hashing algorithm.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType.SHA1">
+            <summary>
+            Represents the SHA1 hashing algorithm.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType.SHA384">
+            <summary>
+            Represents the SHA384 hashing algorithm.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType.SHA512">
+            <summary>
+            Represents the SHA512 hashing algorithm.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenAlgorithmType.KeyedHashAlgorithm">
+            <summary>
+            Represents a keyed hash algorithm.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.ProtonNet.Token.Types.TokenBinaryType">
+            <summary>
+            Represents the types of binary serialization formats used for tokens.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenBinaryType.SimplePack">
+            <summary>
+            Represents a simple binary packing format.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.ProtonNet.Token.Types.TokenBinaryType.MessagePack">
+            <summary>
+            Represents the MessagePack binary serialization format.
+            </summary>
+        </member>
+    </members>
+</doc>

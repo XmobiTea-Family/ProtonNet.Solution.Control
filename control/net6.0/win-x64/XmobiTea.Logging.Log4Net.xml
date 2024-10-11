@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmobiTea.Logging.Log4Net</name>
+    </assembly>
+    <members>
+        <member name="T:XmobiTea.Logging.Log4Net.Log4NetLoggerFactory">
+            <summary>
+            Provides a factory for creating instances of <see cref="T:XmobiTea.Logging.ILogger"/>
+            that use the log4net logging framework.
+            </summary>
+        </member>
+        <member name="F:XmobiTea.Logging.Log4Net.Log4NetLoggerFactory.Instance">
+            <summary>
+            A singleton instance of <see cref="T:XmobiTea.Logging.Log4Net.Log4NetLoggerFactory"/>.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLoggerFactory.CreateLogger(System.String)">
+            <summary>
+            Creates an <see cref="T:XmobiTea.Logging.ILogger"/> instance for the specified <paramref name="name"/>.
+            </summary>
+            <param name="name">The name associated with the logger.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Logging.ILogger"/>.</returns>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLoggerFactory.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:XmobiTea.Logging.Log4Net.Log4NetLoggerFactory"/> class from being created.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Logging.Log4Net.Log4NetLogger">
+            <summary>
+            Implements the <see cref="T:XmobiTea.Logging.ILogger"/> interface using the log4net logging framework.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Logging.Log4Net.Log4NetLogger.log">
+            <summary>
+            Gets the log4net logger instance used by this <see cref="T:XmobiTea.Logging.Log4Net.Log4NetLogger"/>.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Logging.Log4Net.Log4NetLogger.IsDebugEnabled">
+            <summary>
+            Gets a value indicating whether debug logging is enabled.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Logging.Log4Net.Log4NetLogger.IsErrorEnabled">
+            <summary>
+            Gets a value indicating whether error logging is enabled.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Logging.Log4Net.Log4NetLogger.IsFatalEnabled">
+            <summary>
+            Gets a value indicating whether fatal logging is enabled.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Logging.Log4Net.Log4NetLogger.IsInfoEnabled">
+            <summary>
+            Gets a value indicating whether informational logging is enabled.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Logging.Log4Net.Log4NetLogger.IsWarnEnabled">
+            <summary>
+            Gets a value indicating whether warning logging is enabled.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Logging.Log4Net.Log4NetLogger.Name">
+            <summary>
+            Gets the name of this logger.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.#ctor(log4net.ILog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Logging.Log4Net.Log4NetLogger"/> class with the specified log4net logger.
+            </summary>
+            <param name="logger">The log4net logger to use.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Debug(System.Object)">
+            <summary>
+            Logs a debug message.
+            </summary>
+            <param name="message">The message to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Debug(System.Object,System.Exception)">
+            <summary>
+            Logs a debug message with an exception.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="exception">The exception to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.DebugFormat(System.String,System.Object[])">
+            <summary>
+            Logs a formatted debug message.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.DebugFormat(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+            Logs a formatted debug message using the specified format provider.
+            </summary>
+            <param name="provider">The format provider.</param>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Error(System.Object)">
+            <summary>
+            Logs an error message.
+            </summary>
+            <param name="message">The message to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Error(System.Object,System.Exception)">
+            <summary>
+            Logs an error message with an exception.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="exception">The exception to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.ErrorFormat(System.String,System.Object[])">
+            <summary>
+            Logs a formatted error message.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.ErrorFormat(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+            Logs a formatted error message using the specified format provider.
+            </summary>
+            <param name="provider">The format provider.</param>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Fatal(System.Object)">
+            <summary>
+            Logs a fatal message.
+            </summary>
+            <param name="message">The message to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Fatal(System.Object,System.Exception)">
+            <summary>
+            Logs a fatal message with an exception.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="exception">The exception to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.FatalFormat(System.String,System.Object[])">
+            <summary>
+            Logs a formatted fatal message.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.FatalFormat(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+            Logs a formatted fatal message using the specified format provider.
+            </summary>
+            <param name="provider">The format provider.</param>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Info(System.Object)">
+            <summary>
+            Logs an informational message.
+            </summary>
+            <param name="message">The message to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Info(System.Object,System.Exception)">
+            <summary>
+            Logs an informational message with an exception.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="exception">The exception to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.InfoFormat(System.String,System.Object[])">
+            <summary>
+            Logs a formatted informational message.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.InfoFormat(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+            Logs a formatted informational message using the specified format provider.
+            </summary>
+            <param name="provider">The format provider.</param>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Warn(System.Object)">
+            <summary>
+            Logs a warning message.
+            </summary>
+            <param name="message">The message to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.Warn(System.Object,System.Exception)">
+            <summary>
+            Logs a warning message with an exception.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="exception">The exception to log.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.WarnFormat(System.String,System.Object[])">
+            <summary>
+            Logs a formatted warning message.
+            </summary>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+        <member name="M:XmobiTea.Logging.Log4Net.Log4NetLogger.WarnFormat(System.IFormatProvider,System.String,System.Object[])">
+            <summary>
+            Logs a formatted warning message using the specified format provider.
+            </summary>
+            <param name="provider">The format provider.</param>
+            <param name="format">The format string.</param>
+            <param name="args">The arguments to format.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,727 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmobiTea.Threading</name>
+    </assembly>
+    <members>
+        <member name="T:XmobiTea.Threading.Agent.EnqueueAgent">
+            <summary>
+            Manages and processes tasks that need to be executed.
+            Implements task enqueuing and processing with statistics tracking.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.EnqueueAgent.#ctor(XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.Agent.EnqueueAgent"/> class.
+            </summary>
+            <param name="counter">The counter used for tracking statistics.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.EnqueueAgent.Enqueue(System.Action)">
+            <summary>
+            Enqueues a new action task for execution.
+            </summary>
+            <param name="action">The action to be executed.</param>
+            <returns>An <see cref="T:XmobiTea.Threading.Models.ISingleTask"/> representing the enqueued task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.EnqueueAgent.Enqueue(XmobiTea.Threading.Models.SingleTask)">
+            <summary>
+            Enqueues a <see cref="T:XmobiTea.Threading.Models.SingleTask"/> for execution.
+            </summary>
+            <param name="task">The task to be enqueued.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.EnqueueAgent.Service">
+            <summary>
+            Processes pending tasks in the queue.
+            Updates the statistics counters based on task execution.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.Agent.IEnqueueInternal">
+            <summary>
+            Provides methods for enqueuing tasks that will be executed.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.IEnqueueInternal.Enqueue(XmobiTea.Threading.Models.SingleTask)">
+            <summary>
+            Enqueues a task for execution.
+            </summary>
+            <param name="task">The task to be enqueued.</param>
+        </member>
+        <member name="T:XmobiTea.Threading.Agent.ScheduleAgent">
+            <summary>
+            Manages and services tasks that are scheduled to run at a specific time.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleAgent._lockScheduleTaskPending">
+            <summary>
+            Lock object for synchronizing access to the pending tasks queue.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleAgent.scheduleTaskPending">
+            <summary>
+            Queue of tasks that are scheduled to run at a specific time.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleAgent.counter">
+            <summary>
+            Counter used for tracking statistics of tasks.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleAgent.enqueueInternal">
+            <summary>
+            Enqueue interface used to manage the execution of tasks.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.ScheduleAgent.#ctor(XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange,XmobiTea.Threading.Agent.IEnqueueInternal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.Agent.ScheduleAgent"/> class.
+            </summary>
+            <param name="counter">The statistics counter for tracking task metrics.</param>
+            <param name="enqueueInternal">The enqueue interface for managing task execution.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.ScheduleAgent.Schedule(System.Action,System.Int64)">
+            <summary>
+            Schedules a task to run after a specified delay.
+            </summary>
+            <param name="action">The action to be executed by the task.</param>
+            <param name="firstInMs">The delay in milliseconds before the task is first executed.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.ScheduleAgent.Service">
+            <summary>
+            Services pending tasks by executing them when their scheduled time arrives.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent">
+            <summary>
+            Manages and services tasks that are scheduled to run at regular intervals.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent._lockScheduleOnIntervalTaskPending">
+            <summary>
+            Lock object for synchronizing access to the pending tasks queue.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent.scheduleOnIntervalTaskPending">
+            <summary>
+            Queue of tasks that are scheduled to run at regular intervals.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent.counter">
+            <summary>
+            Counter used for tracking statistics of tasks.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent.enqueueInternal">
+            <summary>
+            Enqueue interface used to manage the execution of tasks.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent.#ctor(XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange,XmobiTea.Threading.Agent.IEnqueueInternal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent"/> class.
+            </summary>
+            <param name="counter">The statistics counter for tracking task metrics.</param>
+            <param name="enqueueInternal">The enqueue interface for managing task execution.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent.ScheduleOnInterval(System.Action,System.Int64,System.Int32)">
+            <summary>
+            Schedules a task to run at regular intervals.
+            </summary>
+            <param name="action">The action to be executed by the task.</param>
+            <param name="firstInMs">The delay in milliseconds before the task is first executed.</param>
+            <param name="regularInMs">The interval in milliseconds between consecutive executions.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleOnIntervalTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.Agent.ScheduleOnIntervalAgent.Service">
+            <summary>
+            Services pending tasks by executing them when their scheduled time arrives.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.IEnqueue">
+            <summary>
+            Defines the contract for enqueuing tasks.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.IEnqueue.Enqueue(System.Action)">
+            <summary>
+            Enqueues an action to be executed.
+            </summary>
+            <param name="action">The action to be enqueued.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.ISingleTask"/> representing the enqueued task.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.IFiber">
+            <summary>
+            Defines the contract for a fiber that supports task enqueueing, scheduling, and interval scheduling.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.IFiberControl">
+            <summary>
+            Defines the contract for controlling a fiber, including starting and disposing of it.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.IFiberControl.Start">
+            <summary>
+            Starts the fiber.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.IFiberControl.Dispose">
+            <summary>
+            Disposes of the fiber, releasing any resources.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.IFiberStatisticsCounter">
+            <summary>
+            Defines the contract for accessing various statistics counters related to fibers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.IFiberStatisticsCounter.GetEnqueueCounter">
+            <summary>
+            Gets the counter for tracking enqueued tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for enqueued tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.IFiberStatisticsCounter.GetScheduleCounter">
+            <summary>
+            Gets the counter for tracking scheduled tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for scheduled tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.IFiberStatisticsCounter.GetScheduleOnIntervalCounter">
+            <summary>
+            Gets the counter for tracking tasks scheduled on intervals.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for interval scheduled tasks.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.ISchedule">
+            <summary>
+            Defines the contract for scheduling tasks.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.ISchedule.Schedule(System.Action,System.Int64)">
+            <summary>
+            Schedules an action to be executed after a specified delay.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the action is executed.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.IScheduleOnInterval">
+            <summary>
+            Defines the contract for scheduling tasks to run at regular intervals.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.IScheduleOnInterval.ScheduleOnInterval(System.Action,System.Int64,System.Int32)">
+            <summary>
+            Schedules an action to be executed at regular intervals.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the first execution of the action.</param>
+            <param name="regularInMs">The interval in milliseconds between subsequent executions of the action.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleOnIntervalTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.IService">
+            <summary>
+            Defines the contract for a service that performs a specific action.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.IService.Service">
+            <summary>
+            Executes the service action.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.Models.IScheduleOnIntervalTask">
+            <summary>
+            Represents a scheduled task that repeats at regular intervals.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.IScheduleOnIntervalTask.GetRegularInMs">
+            <summary>
+            Gets the interval in milliseconds between consecutive executions.
+            </summary>
+            <returns>The interval in milliseconds.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.Models.ScheduleOnIntervalTask">
+            <summary>
+            Provides an implementation of a scheduled task that repeats at regular intervals.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Models.ScheduleOnIntervalTask.regularInMs">
+            <summary>
+            The interval in milliseconds between consecutive executions.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleOnIntervalTask.#ctor(System.Action,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.Models.ScheduleOnIntervalTask"/> class.
+            </summary>
+            <param name="action">The action to be executed by the task.</param>
+            <param name="regularInMs">The interval in milliseconds between consecutive executions.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleOnIntervalTask.GetRegularInMs">
+            <summary>
+            Gets the interval in milliseconds between consecutive executions.
+            </summary>
+            <returns>The interval in milliseconds.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleOnIntervalTask.Invoke">
+            <summary>
+            Executes the task's action and handles the task's running state.
+            </summary>
+            <returns>True if the task was executed successfully; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.Models.IScheduleTask">
+            <summary>
+            Represents a scheduled task that can be invoked and checked for its running status.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.IScheduleTask.IsRunning">
+            <summary>
+            Checks if the task is currently running.
+            </summary>
+            <returns>True if the task is running; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.IScheduleTask.Dispose">
+            <summary>
+            Releases all resources used by the task.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.Models.ScheduleTask">
+            <summary>
+            Provides an implementation of a scheduled task with an action and state management.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Models.ScheduleTask.nextInvokeInMs">
+            <summary>
+            The time in milliseconds when the task should be invoked next.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Models.ScheduleTask.isRunning">
+            <summary>
+            Indicates whether the task is currently running.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Models.ScheduleTask.isDispose">
+            <summary>
+            Indicates whether the task has been disposed.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleTask.#ctor(System.Action)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.Models.ScheduleTask"/> class.
+            </summary>
+            <param name="action">The action to be executed by the task.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleTask.Dispose">
+            <summary>
+            Releases all resources used by the task.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleTask.IsRunning">
+            <summary>
+            Checks if the task is currently running and not disposed.
+            </summary>
+            <returns>True if the task is running and not disposed; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleTask.InvokeInternal">
+            <summary>
+            Executes the task's action internally, with exception handling.
+            </summary>
+            <returns>True if the task was executed successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ScheduleTask.Invoke">
+            <summary>
+            Executes the task's action if it is running, and updates the running state.
+            </summary>
+            <returns>True if the task was executed successfully; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.Models.ISingleTask">
+            <summary>
+            Represents a single task that can be invoked.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.ISingleTask.Invoke">
+            <summary>
+            Executes the task and returns a boolean indicating success or failure.
+            </summary>
+            <returns>True if the task was executed successfully; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.Models.SingleTask">
+            <summary>
+            Provides an implementation of a single task with an action.
+            </summary>
+        </member>
+        <member name="P:XmobiTea.Threading.Models.SingleTask.action">
+            <summary>
+            The action to be executed by this task.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.SingleTask.#ctor(System.Action)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.Models.SingleTask"/> class.
+            </summary>
+            <param name="action">The action to be executed by the task.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.Models.SingleTask.Invoke">
+            <summary>
+            Executes the task and returns a boolean indicating success or failure.
+            </summary>
+            <returns>True if the task was executed successfully; otherwise, false.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.PoolFiber">
+            <summary>
+            Represents a pool of fibers that can enqueue tasks, schedule tasks, and schedule tasks at regular intervals.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.PoolFiber"/> class.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.GetEnqueueCounter">
+            <summary>
+            Gets the counter for tracking enqueued tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for enqueued tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.GetScheduleCounter">
+            <summary>
+            Gets the counter for tracking scheduled tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for scheduled tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.GetScheduleOnIntervalCounter">
+            <summary>
+            Gets the counter for tracking tasks scheduled on intervals.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for interval scheduled tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.Enqueue(System.Action)">
+            <summary>
+            Enqueues an action to be executed.
+            </summary>
+            <param name="action">The action to be enqueued.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.ISingleTask"/> representing the enqueued task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.Schedule(System.Action,System.Int64)">
+            <summary>
+            Schedules an action to be executed after a specified delay.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the action is executed.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.ScheduleOnInterval(System.Action,System.Int64,System.Int32)">
+            <summary>
+            Schedules an action to be executed at regular intervals.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the first execution of the action.</param>
+            <param name="regularInMs">The interval in milliseconds between subsequent executions of the action.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleOnIntervalTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.Start">
+            <summary>
+            Starts the fiber.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.Dispose">
+            <summary>
+            Disposes of the fiber, releasing any resources.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.PoolFiberEnqueueAgent.Enqueue(System.Action)">
+            <summary>
+            Enqueues an action to be executed.
+            </summary>
+            <param name="action">The action to be enqueued.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.ISingleTask"/> representing the enqueued task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.TimerActions.Dispose">
+            <summary>
+            Disposes of all timer actions and releases any resources.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.PoolFiberScheduleAgent.Schedule(System.Action,System.Int64)">
+            <summary>
+            Schedules an action to be executed after a specified delay.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the action is executed.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.TimerAction.Dispose">
+            <summary>
+            Disposes of the timer action, releasing any resources.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.PoolFiber.PoolFiberScheduleOnIntervalAgent.ScheduleOnInterval(System.Action,System.Int64,System.Int32)">
+            <summary>
+            Schedules an action to be executed at regular intervals.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the first execution of the action.</param>
+            <param name="regularInMs">The interval in milliseconds between subsequent executions of the action.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleOnIntervalTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="T:XmobiTea.Threading.RoundRobinFiber">
+            <summary>
+            Represents a fiber that uses a round-robin scheduling strategy for task execution.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.RoundRobinFiber"/> class.
+            </summary>
+            <param name="name">The name of the fiber.</param>
+            <param name="count">The number of child threads to use.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.Start">
+            <summary>
+            Starts the fiber and adds it to the list of round-robin fibers.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.GetEnqueueCounter">
+            <summary>
+            Gets the counter for tracking enqueued tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for enqueued tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.GetScheduleCounter">
+            <summary>
+            Gets the counter for tracking scheduled tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for scheduled tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.GetScheduleOnIntervalCounter">
+            <summary>
+            Gets the counter for tracking tasks scheduled on intervals.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for interval scheduled tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.Enqueue(System.Action)">
+            <summary>
+            Enqueues an action to be executed.
+            </summary>
+            <param name="action">The action to be enqueued.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.ISingleTask"/> representing the enqueued task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.Schedule(System.Action,System.Int64)">
+            <summary>
+            Schedules an action to be executed after a specified delay.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the action is executed.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.ScheduleOnInterval(System.Action,System.Int64,System.Int32)">
+            <summary>
+            Schedules an action to be executed at regular intervals.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the first execution of the action.</param>
+            <param name="regularInMs">The interval in milliseconds between subsequent executions of the action.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleOnIntervalTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinFiber.Dispose">
+            <summary>
+            Disposes of the fiber, releasing any resources.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.RoundRobinEnqueueAgent">
+            <summary>
+            Represents an enqueue agent that uses a round-robin scheduling strategy for task execution.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinEnqueueAgent.#ctor(XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange,System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.RoundRobinEnqueueAgent"/> class.
+            </summary>
+            <param name="counter">The counter for tracking enqueue statistics.</param>
+            <param name="name">The name of the agent.</param>
+            <param name="count">The number of child threads to use.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinEnqueueAgent.Enqueue(System.Action)">
+            <summary>
+            Enqueues an action to be executed.
+            </summary>
+            <param name="action">The action to be enqueued.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.ISingleTask"/> representing the enqueued task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinEnqueueAgent.Enqueue(XmobiTea.Threading.Models.SingleTask)">
+            <summary>
+            Enqueues a single task to be executed using round-robin scheduling.
+            </summary>
+            <param name="task">The task to be enqueued.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinEnqueueAgent.Start">
+            <summary>
+            Starts all child threads for processing enqueued tasks.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.RoundRobinEnqueueAgent.Dispose">
+            <summary>
+            Disposes of all child threads and releases any resources.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter">
+            <summary>
+            Defines methods for accessing statistics related to task execution.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter.GetPendingCount">
+            <summary>
+            Gets the count of pending tasks.
+            </summary>
+            <returns>The number of pending tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter.GetCalledCount">
+            <summary>
+            Gets the count of called tasks.
+            </summary>
+            <returns>The number of called tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter.GetFailedCount">
+            <summary>
+            Gets the count of failed tasks.
+            </summary>
+            <returns>The number of failed tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter.Clear">
+            <summary>
+            Clears the statistics counters.
+            </summary>
+        </member>
+        <member name="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange">
+            <summary>
+            Defines methods for changing statistics counters.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange.ChangeFailed(System.Int32)">
+            <summary>
+            Updates the count of failed tasks.
+            </summary>
+            <param name="amount">The amount to change the failed count by.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange.ChangeCalled(System.Int32)">
+            <summary>
+            Updates the count of called tasks.
+            </summary>
+            <param name="amount">The amount to change the called count by.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.IStatisticsCounterChange.ChangePending(System.Int32)">
+            <summary>
+            Updates the count of pending tasks.
+            </summary>
+            <param name="amount">The amount to change the pending count by.</param>
+        </member>
+        <member name="T:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent">
+            <summary>
+            Implements statistics counters with thread-safe operations.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent.GetFailedCount">
+            <summary>
+            Gets the count of failed tasks.
+            </summary>
+            <returns>The number of failed tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent.GetCalledCount">
+            <summary>
+            Gets the count of called tasks.
+            </summary>
+            <returns>The number of called tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent.GetPendingCount">
+            <summary>
+            Gets the count of pending tasks.
+            </summary>
+            <returns>The number of pending tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent.Clear">
+            <summary>
+            Clears the statistics counters.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent.ChangeFailed(System.Int32)">
+            <summary>
+            Updates the count of failed tasks.
+            </summary>
+            <param name="amount">The amount to change the failed count by.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent.ChangeCalled(System.Int32)">
+            <summary>
+            Updates the count of called tasks.
+            </summary>
+            <param name="amount">The amount to change the called count by.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.StatisticsCounter.StatisticsCounterAgent.ChangePending(System.Int32)">
+            <summary>
+            Updates the count of pending tasks.
+            </summary>
+            <param name="amount">The amount to change the pending count by.</param>
+        </member>
+        <member name="T:XmobiTea.Threading.ThreadFiber">
+            <summary>
+            Represents a fiber that uses a dedicated thread for task execution and scheduling.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XmobiTea.Threading.ThreadFiber"/> class.
+            </summary>
+            <param name="name">The name of the thread.</param>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.GetEnqueueCounter">
+            <summary>
+            Gets the counter for tracking enqueued tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for enqueued tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.GetScheduleCounter">
+            <summary>
+            Gets the counter for tracking scheduled tasks.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for scheduled tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.GetScheduleOnIntervalCounter">
+            <summary>
+            Gets the counter for tracking tasks scheduled on intervals.
+            </summary>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.StatisticsCounter.IStatisticsCounter"/> for interval scheduled tasks.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.Enqueue(System.Action)">
+            <summary>
+            Enqueues an action to be executed.
+            </summary>
+            <param name="action">The action to be enqueued.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.ISingleTask"/> representing the enqueued task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.Schedule(System.Action,System.Int64)">
+            <summary>
+            Schedules an action to be executed after a specified delay.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the action is executed.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.ScheduleOnInterval(System.Action,System.Int64,System.Int32)">
+            <summary>
+            Schedules an action to be executed at regular intervals.
+            </summary>
+            <param name="action">The action to be scheduled.</param>
+            <param name="firstInMs">The delay in milliseconds before the first execution of the action.</param>
+            <param name="regularInMs">The interval in milliseconds between subsequent executions of the action.</param>
+            <returns>An instance of <see cref="T:XmobiTea.Threading.Models.IScheduleOnIntervalTask"/> representing the scheduled task.</returns>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.Start">
+            <summary>
+            Starts the thread for processing tasks.
+            </summary>
+        </member>
+        <member name="M:XmobiTea.Threading.ThreadFiber.Dispose">
+            <summary>
+            Disposes of the fiber, releasing any resources.
+            </summary>
+        </member>
+    </members>
+</doc>

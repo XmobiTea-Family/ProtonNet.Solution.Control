@@ -1,0 +1,366 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "webapiserver/1.0.0": {
+        "dependencies": {
+          "XmobiTea.ProtonNet.Server.WebApi": "1.0.4"
+        },
+        "runtime": {
+          "webapiserver.dll": {}
+        }
+      },
+      "XmobiTea.Bean/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Linq": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.Bean.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Binary/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.Binary.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Binary.MessagePack/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Binary": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.Binary.MessagePack.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Binary.SimplePack/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Binary": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.Binary.SimplePack.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Collections.Generic/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.Collections.Generic.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Crypto/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.Crypto.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Crypto.Aes/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Crypto": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.Crypto.Aes.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Data/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.Data.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Data.Converter/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Collections.Generic": "1.0.4",
+          "XmobiTea.Data": "1.0.4",
+          "XmobiTea.Linq": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.Data.Converter.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Linq/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.Linq.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Logging/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.Logging.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.ProtonNet.Networking/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Collections.Generic": "1.0.4",
+          "XmobiTea.Data": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.ProtonNet.Networking.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.ProtonNet.RpcProtocol/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Binary": "1.0.4",
+          "XmobiTea.Crypto": "1.0.4",
+          "XmobiTea.Crypto.Aes": "1.0.4",
+          "XmobiTea.Data": "1.0.4",
+          "XmobiTea.ProtonNet.Networking": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.ProtonNet.RpcProtocol.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.ProtonNet.Server/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Bean": "1.0.4",
+          "XmobiTea.Binary": "1.0.4",
+          "XmobiTea.Binary.MessagePack": "1.0.4",
+          "XmobiTea.Binary.SimplePack": "1.0.4",
+          "XmobiTea.Collections.Generic": "1.0.4",
+          "XmobiTea.Crypto": "1.0.4",
+          "XmobiTea.Data": "1.0.4",
+          "XmobiTea.Data.Converter": "1.0.4",
+          "XmobiTea.Logging": "1.0.4",
+          "XmobiTea.ProtonNet.Networking": "1.0.4",
+          "XmobiTea.ProtonNet.RpcProtocol": "1.0.4",
+          "XmobiTea.ProtonNet.Token": "1.0.4",
+          "XmobiTea.ProtonNetCommon": "1.0.4",
+          "XmobiTea.ProtonNetServer": "1.0.4",
+          "XmobiTea.Threading": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.ProtonNet.Server.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.ProtonNet.Server.WebApi/1.0.4": {
+        "dependencies": {
+          "XmobiTea.ProtonNet.Server": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.ProtonNet.Server.WebApi.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.ProtonNet.Token/1.0.4": {
+        "dependencies": {
+          "XmobiTea.Binary": "1.0.4",
+          "XmobiTea.Linq": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.ProtonNet.Token.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.ProtonNetCommon/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.ProtonNetCommon.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.ProtonNetServer/1.0.4": {
+        "dependencies": {
+          "XmobiTea.ProtonNetCommon": "1.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/XmobiTea.ProtonNetServer.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "XmobiTea.Threading/1.0.4": {
+        "runtime": {
+          "lib/net8.0/XmobiTea.Threading.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "webapiserver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "XmobiTea.Bean/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dbuO5Pj2QjUQ/DwXwvycgj2Tu7GVtQrUqMMpSMOCsJo5naBTCc6NRLeWikm77BcgPriHpDhK32gk9iaWdGdBFQ==",
+      "path": "xmobitea.bean/1.0.4",
+      "hashPath": "xmobitea.bean.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Binary/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8ggW5cX79cRYjloWYalgWem9e3skh2xfGIxv9mZnI41wde7G2Z9IeiHaw95uDmpKnjrEUKR7uH5OML53cNAi8A==",
+      "path": "xmobitea.binary/1.0.4",
+      "hashPath": "xmobitea.binary.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Binary.MessagePack/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rl07vfnpayFchkSoJDoxSGp3zlzsa/wkqSLOQDv+w21rzQrwWE3H2e3xReYguYu6HNLxpdBW7V91hZn9vuLqPg==",
+      "path": "xmobitea.binary.messagepack/1.0.4",
+      "hashPath": "xmobitea.binary.messagepack.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Binary.SimplePack/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fKq41aFjXwjnSx4Ji5/1J6YKwq+juk9OHyZG/tROt4CVJWIgSMIN3xbhqwZEuVIXAKLBHjc8mWTY4EXfQ5niEw==",
+      "path": "xmobitea.binary.simplepack/1.0.4",
+      "hashPath": "xmobitea.binary.simplepack.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Collections.Generic/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YbMxLoJ3qugtNo/G8OBj2khMk19yz6JgOS9571RyraJZTuMWvp047lpBKkosk2YBDXDREgFARDPtAStr5JEK1g==",
+      "path": "xmobitea.collections.generic/1.0.4",
+      "hashPath": "xmobitea.collections.generic.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Crypto/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dnQd94AKly7vg2OXLEcMbuVdAJYXwxgJ0e/l7TKb7tDWotJWTZiQwXvso1SBdU2hN4smGrz74GsyoXeBSu9nxA==",
+      "path": "xmobitea.crypto/1.0.4",
+      "hashPath": "xmobitea.crypto.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Crypto.Aes/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4KCXSTiaLHon3MFt+d2NTiKbzF8sRYl6YU4HOGCEv2X+9COw6rdq3pU7J9hX5IvrKqjPbNkulGcXrBoeklHz3A==",
+      "path": "xmobitea.crypto.aes/1.0.4",
+      "hashPath": "xmobitea.crypto.aes.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Data/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ESYYHkzli/5wwt8FFy8CloxadqKt6aj/jMU/DvsihJL9LSrpPfNMHmnkDe/AH0rRXjP4i6km9NEEYii/2mbWOg==",
+      "path": "xmobitea.data/1.0.4",
+      "hashPath": "xmobitea.data.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Data.Converter/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GUcZ+kvucQNB9jI5ISEF5jfaXAliMb+Gr+u88abkx8KqvKVgKslO4jeSJcJb3cEGWqyLIsZZ7cYkLwDjWeOk0g==",
+      "path": "xmobitea.data.converter/1.0.4",
+      "hashPath": "xmobitea.data.converter.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Linq/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/z9lDx4WrwXNeyXEGIQ5quRQt5yIKcUieUWQ2peXehHyVLTSPnqUNK9j9iMiR9wa5DVplhOx7YMDSEs/O5I6dg==",
+      "path": "xmobitea.linq/1.0.4",
+      "hashPath": "xmobitea.linq.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Logging/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BuUBseisZ+UR1gZWWa+4QGXiSyE+pDnyePafEdEyeFdVTjJp4SdaGhxy23wwBAE31/ogtRZUzEGiGPS4U+xtAw==",
+      "path": "xmobitea.logging/1.0.4",
+      "hashPath": "xmobitea.logging.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.ProtonNet.Networking/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tpUsUgpRvek1pgyWFYP1C0uiCj+AL01ZsKCRyOXNCPypBiYQCscq3DIYfZfiWxuh1hxbD8YXiNiKTtYwoALn2w==",
+      "path": "xmobitea.protonnet.networking/1.0.4",
+      "hashPath": "xmobitea.protonnet.networking.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.ProtonNet.RpcProtocol/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uHBc414Pkw3aHFl8b9QGA28umC4JPBq90PCIKpJxdRjgYaYBDiUMrb76iin5qE5MexipGjHC3zHVoFDqC0AOUQ==",
+      "path": "xmobitea.protonnet.rpcprotocol/1.0.4",
+      "hashPath": "xmobitea.protonnet.rpcprotocol.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.ProtonNet.Server/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fr1tJ2aNr5X2+OIQUHi/P9iU/Hu0lI17S0wyRZFhIoPuJH+rD4xrM0JUfEwoWCasyH3pXCkBAj9mBeHhJWH2zA==",
+      "path": "xmobitea.protonnet.server/1.0.4",
+      "hashPath": "xmobitea.protonnet.server.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.ProtonNet.Server.WebApi/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2nge0w8yIMvCl7bBuWEPBAl/7aWBZjuhiMeojCg0WGPvf1mjG2FD27Lx3viVKfGZpXvTel+G6w1Jp/S6lwKn4Q==",
+      "path": "xmobitea.protonnet.server.webapi/1.0.4",
+      "hashPath": "xmobitea.protonnet.server.webapi.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.ProtonNet.Token/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8moc5X6WJbzFy5oBgaqzC7Ses2GhJlBYfK4Vb2KRjXTjdHY7kEaVQjGODZtGIZKu1k7NmAK9uRahBDCXN77sAA==",
+      "path": "xmobitea.protonnet.token/1.0.4",
+      "hashPath": "xmobitea.protonnet.token.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.ProtonNetCommon/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YxsT46sS9qegyQ0MUJO8ehssjep79k1CQOiE/t/tOHa7bGCgjn0fzsFC2ZNncNhyqx1oKNY4PhjBO1ZOEHHjrg==",
+      "path": "xmobitea.protonnetcommon/1.0.4",
+      "hashPath": "xmobitea.protonnetcommon.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.ProtonNetServer/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gODnhraH4urTcj6MEz6EPri3Ckuj5n3YOJEfGJfyIDiC9OucrlRgN9ItYF7mSs+CbXoPPUjQl+kSaOrIMX6Flg==",
+      "path": "xmobitea.protonnetserver/1.0.4",
+      "hashPath": "xmobitea.protonnetserver.1.0.4.nupkg.sha512"
+    },
+    "XmobiTea.Threading/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g5pvtLhkPDChClZquY3hRnJTa3OcuD2AoJzr0kG0L9UafFZA/W79qw5xmnE0z5mD9vY3ym9B0e8dUmxTjvorIw==",
+      "path": "xmobitea.threading/1.0.4",
+      "hashPath": "xmobitea.threading.1.0.4.nupkg.sha512"
+    }
+  }
+}

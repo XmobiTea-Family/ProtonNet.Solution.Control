@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.protonnetserver.com/1.0/ServerSettings/schema.json",
+  "TargetFramework": "net8.0",
+  "TargetRuntime": "win-x64",
+  "Instances": [
+    {
+      "Name": "webapiserver",
+      "Enable": true,
+      "ServerType": "WebApi",
+      "BinPath": "webapiserver",
+      "AssemblyName": "webapiserver",
+      "StartupSettingsFilePath": "StartupSettings.json",
+      "Log4NetFilePath": "log4net.config",
+      "StartupType": "auto"
+    }
+  ]
+}
