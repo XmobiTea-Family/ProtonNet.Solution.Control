@@ -31,7 +31,7 @@ Next, modify the `ProtonNetServerSettings.json` file to configure `ProtonNet Con
 
 ```json
 {
-  "$schema": "https://schema.protonnetserver.com/1.0/ServerSettings/schema.json",
+  "$schema": "https://schema.protonserver.net/1.0/ServerSettings/schema.json",
   "TargetFramework": "net8.0", // Defines the .NET version of your project, e.g., net46, net481, netcoreapp3.1, net6.0,...
   "TargetRuntime": "win-x64", // The operating system and architecture that will run the ProtonNet Server project
   "Instances": [ // Configure the instances in this project
@@ -80,6 +80,6 @@ Example to check the status of an instance with the Name `webapiserver`:
 - `log [instance_name]`: Display all logs during the execution of this project.
 
 ## V. Support
-If you encounter issues, feel free to share them on [ProtonNet Discussions](https://discussions.protonnetserver.com) for support, or contact me via email at changx.develop@gmail.com.
+If you encounter issues, feel free to share them on [ProtonNet Discussions](https://discussions.protonserver.net) for support, or contact me via email at changx.develop@gmail.com.
 
 **Happy development with ProtonNet!**
